@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<title>Blog: Lucas Shadler</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-laptop,.fa-coffee {font-size:200px}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="resume.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resume</a>
+    <a href="https://lshadler.bandcamp.com/releases" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Music</a>
+    <a href="blog.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="resume.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resume</a>
+    <a href="https://lshadler.bandcamp.com/releases" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Music</a>
+    <a href="blog.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-teal w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Welcome to my Blog.</h1>
+  <p class="w3-xlarge">Some words about things.</p>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>A Comment on Net Neutrality</h1>
+      <h5 class="w3-padding-32"> With ISPs using a <a href="https://www.theverge.com/2017/3/29/15100620/congress-fcc-isp-web-browsing-privacy-fire-sale">great deal of money</a>  to lobby against Neutrality, I thought that I should do my part to help shed some light on the subject.</h5>
+      <p class="w3-text-grey">First off, for people who are a little iffy on the topic, I have a few articles. The <a href="https://en.wikipedia.org/wiki/Net_neutrality">wikipedia page</a> provides a sufficient overview of the concepts and stipulations of a neutral stance towards the internet. Veronica Belmont discusses the history and potential impacts of net neutrality in her <a href="https://irlpodcast.org/episode2/">podcast</a>. It’s an excellent 25-minute cast you can listen to on a ride and feel informed. In short, Net Neutrality is the idea that all data on the internet is treated equally, preventing ISPs from controlling the flow of data for the users they provide internet access to.</p>
+      <p class="w3-text-grey">On one hand, we do not have to fear for any blocking or throttling of our internet access, which is one main concern for the pro-neutrality agenda. These moves by ISPs would be in violation of competition laws and would be quickly shut down if ever attempted. However, charging premiums for internet access alone will be harmful for businesses, schools, and startups that lack the funding to perform research/business/development while also fronting the cost of communication and information.</p>
+      <p class="w3-text-grey">We are at a turning point in futurism. The laws laid down and modified today will decide who gets to manipulate the foundations of the way we interact with people and one of the biggest changes in human lifestyle. A few of my closest friends I haven’t even met in real life due to the incredible freedoms of an open internet. Let’s make sure we are informed of the changing of the rules that govern the internet, and ensure that our desires as a nation on the topic are met.</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-laptop w3-padding-64 w3-text-teal"></i>
+    </div>
+  </div>
+</div>
+
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">"What I cannot create, I do not understand." - Richard Feynman</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+  <a href="https://www.facebook.com/luke.shadler?ref=br_rs"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+  <a href="https://www.instagram.com/lukeukelele/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  <a href="https://www.linkedin.com/in/lucas-shadler/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+ </div>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
+
