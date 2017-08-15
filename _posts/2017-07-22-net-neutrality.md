@@ -2,12 +2,14 @@
 layout: post
 title: "A Comment on Net Neutrality"
 ---
-With ISPs using a ![great deal of money]{https://www.theverge.com/2017/3/29/15100620/congress-fcc-isp-web-browsing-privacy-fire-sale} 
+<h1>A Comment on Net Neutrality</h1>
+
+With ISPs using a <a href="https://www.theverge.com/2017/3/29/15100620/congress-fcc-isp-web-browsing-privacy-fire-sale">great deal of money</a>
 to lobby against Neutrality, I thought that I should do my part to help shed some light on the subject.
 
-First off, for people who are a little iffy on the topic, I have a few articles. The ![wikipedia page]{https://en.wikipedia.org/wiki/Net_neutrality} 
+First off, for people who are a little iffy on the topic, I have a few articles. The <a href="https://en.wikipedia.org/wiki/Net_neutrality">wiki page</a> 
 provides a sufficient overview of the concepts and stipulations of a neutral stance towards the internet. Veronica Belmont discusses the history 
-and potential impacts of net neutrality in her [podcast]{https://irlpodcast.org/episode2/}. It’s an excellent 25-minute cast you can listen to on 
+and potential impacts of net neutrality in her <a href="https://irlpodcast.org/episode2/">podcast</a>. It’s an excellent 25-minute cast you can listen to on 
 a ride and feel informed. In short, Net Neutrality is the idea that all data on the internet is treated equally, preventing ISPs from controlling 
 the flow of data for the users they provide internet access to.
 
