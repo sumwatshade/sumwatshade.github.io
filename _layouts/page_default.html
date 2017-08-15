@@ -1,10 +1,10 @@
 ---
 layout: default
-title: blog
+title: home
 ---
 <!DOCTYPE html>
 <html>
-<title>Blog: Lucas Shadler</title>
+<title>{{ page.title  }}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,12 +14,7 @@ title: blog
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Roboto", sans-serif}
-.fa-laptop,.fa-coffee {font-size:200px}
-
-ul.post-list {
-	font-size:25px;
-	list-style-type:none;
-}
+.fa-snowflake-o,.fa-laptop {font-size:200px}
 </style>
 <body>
 
@@ -40,22 +35,6 @@ ul.post-list {
     <a href="blog.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
     <a href="https://lshadler.bandcamp.com/releases" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Music</a>
   </div>
-</div>
-
-<!-- Header -->
-<header class="w3-container w3-teal w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">Welcome to my Blog.</h1>
-  <p class="w3-xlarge">Some words about things.</p>
-</header>
-
-
-
-<div class="posts">
-<ul class="post-list">
-    {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-	{% endfor %}
-</ul>
 </div>
 
 
@@ -87,4 +66,3 @@ function myFunction() {
 
 </body>
 </html>
-
