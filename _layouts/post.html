@@ -11,11 +11,15 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Roboto", sans-serif}
 .fa-snowflake-o,.fa-laptop {font-size:200px}
-div.content {
+div.content-large {
 	margin-top: 150px;
 	padding-left: 25%;
 	width: 75%;
 	font-size: 20px;
+}
+div.content-mobile {
+	margin-top: 150px;
+	width: 100%;
 }
 </style>
 <body>
@@ -39,7 +43,11 @@ div.content {
   </div>
 </div>
 
-<div class="content">
+<div class="content-large w3-hide-small w3-hide-medium">
+	{{ content }}
+</div>
+
+<div class="content-mobile w3-hide-large">
 	{{ content }}
 </div>
 
