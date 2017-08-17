@@ -38,4 +38,5 @@ Dropwizard. But if you put in the time to really work with these frameworks, and
 they really just exist for the benefit of the developer. I learned this through our simple database project, and 
 it is a skill/lesson that I will take through my development career.
 
-Pollaroid, the project that I helped develop, is available on [GitHub]{https://github.com/harlanhaskins/Pollaroid} and at [this link]{https://pollaroid.club}
+Pollaroid, the project that I helped develop, is available on <a href="https://github.com/harlanhaskins/Pollaroid">Github</a> 
+and a running instance is available at <a href="https://pollaroid.club">this link</a>.
