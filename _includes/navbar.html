@@ -1,0 +1,30 @@
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-teal w3-card-2 w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-teal" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href={{ "/index.html" | relative_url }} class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href={{ "/resume.html" | relative_url }} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Resume</a>
+    <a href={{ "/blog.html" | relative_url }} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Blog</a>
+    <a href={{ "/music.html" | relative_url }} class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Music</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href={{ "/index.html" | relative_url }} class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href={{ "/resume.html" | relative_url }} class="w3-bar-item w3-button w3-padding-large w3-white">Resume</a>
+    <a href={{ "/blog.html" | relative_url }} class="w3-bar-item w3-button w3-padding-large w3-white">Blog</a>
+    <a href={{ "/music.html" | relative_url }} class="w3-bar-item w3-button w3-padding-large w3-white">Music</a>
+  </div>
+</div>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
