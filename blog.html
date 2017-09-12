@@ -4,27 +4,64 @@ title: Lucas Shadler | Blog
 ---
 
 {% include navbar.html %}
+<body class="w3-teal" style="margin-top: 25px;">
+
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
 
 <!-- Header -->
-<header class="w3-container w3-teal w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">Welcome to my Blog.</h1>
-  <p class="w3-xlarge">Follow me on my journey to becoming a Developer.</p>
+<header class="w3-container w3-center w3-padding-32">
+  <h1><b>Develop-Mental</b></h1>
+  <p>Welcome to the blog of <span class="w3-tag">Lucas Shadler</span></p>
 </header>
 
+<!-- Grid -->
+<div class="w3-row">
 
+<!-- Blog entries -->
+<div>
+  <!-- Blog entry -->
+  {% for post in site.posts %}
+  <div class="w3-card-4 w3-margin w3-white">
+    <div class="w3-container">
+      <h3><b>{{ post.title }}</b></h3>
+      <h5><span class="w3-opacity">{{post.date | date_to_long_string}}</span></h5>
+    </div>
 
-<div class="posts">
-<ul class="post-list">
-    {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-	{% endfor %}
-</ul>
+    <div class="w3-container">
+      {{post.content}}
+    </div>
+  </div>
+  {% endfor %}
+<!-- END BLOG ENTRIES -->
 </div>
 
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card-2 w3-margin w3-margin-top">
+  <img src="assets/luke.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Lucas Shadler</b></h4>
+      <p>Starting as a Physicist, I quickly discovered that my true love and passion
+      was found in the realm of development. Follow me as I tackle the amazing world
+      of computers from each new experience!</p>
+    </div>
+  </div><hr>
 
+  <hr>
 
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">"What I cannot create, I do not understand." - Richard Feynman</h1>
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
 </div>
 
 {% include footer.html %}
+
+</body>
+</html>
