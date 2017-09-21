@@ -1,4 +1,7 @@
-# Analysis of Algorithms: Exam Review
+---
+layout: post
+title: "Analysis of Algorithms: Exam Review"
+---
 ## Basic Concepts
 ### Complexity
 An algorithm is efficient if it runs in polynomial time or better.
