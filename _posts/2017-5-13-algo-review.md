@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Analysis of Algorithms: Exam Review"
+title: "Algorithms Review Cheat Sheet"
 ---
 ## Basic Concepts
 ### Complexity
