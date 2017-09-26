@@ -256,32 +256,33 @@ for k from 1 to |V|
 * Slower than Dijkstras
 * but can handle negative values
 * Runs in O(|V||E|)
+
 ```
-// Initialization
 for each vertex v in vertices:
 	dist[v]    = inf
 	predecessor[v] = null;
 dist[source] = 0
 
-// Relaxation
 for i from 1 to size(vertices)-1:
 	for each edge (u,v) with weight w in edges:
 		if dist[u] + w < dist[v]:
 			dist[v] = dist[u] + w
 			predecessor[v] = u
-//Check for negative-weight cycles
+
 for each edge (u,v) with weight w in edges:
 	if dist[u] + w < dist[v]:
 		error "Graph contains a negative-weight cycle"
 return dist,predecessor
 ```
 #### Kruskal
+
 #### Ford-Fulkerson
 * Greedy Algorithm
 * Computes maximum flow in a flow network
 * Complexity: O(Ef); E edges, f maximum flow
+
 ```
-Given G = (V,E) with flow capacity c, source s, and sink t
+given G = (V,E) with flow capacity c, source s, and sink t
 f(u,v) = 0 for all edges(u,v)
 while there is a path from s to t in G_f, with c_f(u,v) > 0 for all edges:
 	find c_f(p) = min(c_f(u,v):(u,v))
