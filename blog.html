@@ -25,6 +25,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   {% for post in site.posts %}
   <div class="w3-card-4 w3-margin w3-white">
     <div class="w3-container">
+      <input id="button-{{post.id}}" type="button" style="float:right;margin-top:30px" class="w3-button w3-teal" name="Show More..." value="Show More..." onclick="toggleDiv('{{post.id}}')"/>
       <h3><b>{{ post.title }}</b></h3>
       <h5><span class="w3-opacity">{{post.date | date_to_long_string}}</span></h5>
     </div>
@@ -32,7 +33,6 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div id="content-{{post.id}}" style="display:none;" class="w3-container">
       {{post.content}}
     </div>
-    <input id="button-{{post.id}}" type="button" style="margin-left:10px;margin-bottom:10px;" class="w3-button w3-teal" name="Show More..." value="Show More..." onclick="toggleDiv('{{post.id}}')"/>
   </div>
   {% endfor %}
 <!-- END BLOG ENTRIES -->
