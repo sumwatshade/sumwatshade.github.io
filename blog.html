@@ -29,9 +29,10 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h5><span class="w3-opacity">{{post.date | date_to_long_string}}</span></h5>
     </div>
 
-    <div class="w3-container">
+    <div id="content-{{post.id}}" style="display:none;" class="w3-container">
       {{post.content}}
     </div>
+    <input id="button-{{post.id}}" type="button" style="margin-left:10px;margin-bottom:10px;" class="w3-button w3-teal" name="Show More..." value="Show More..." onclick="toggleDiv('{{post.id}}')"/>
   </div>
   {% endfor %}
 <!-- END BLOG ENTRIES -->
@@ -62,6 +63,21 @@ and is wrapped around the whole page content, except for the footer in this exam
 </div>
 
 {% include footer.html %}
-
 </body>
+
+<script>
+function toggleDiv(id) {
+	buttonId  = "button-" + id
+	contentId = "content-" + id
+	if(document.getElementById(contentId).style.display == "block") {
+		document.getElementById(contentId).style.display = "none";
+		document.getElementById(buttonId).value = "Show More...";
+	}
+	else {
+		document.getElementById(contentId).style.display = "block";
+		document.getElementById(buttonId).value = "Show Less...";
+	}
+}
+</script>
+
 </html>
