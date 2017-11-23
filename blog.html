@@ -30,7 +30,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h5><span class="w3-opacity">{{post.date | date_to_long_string}}</span></h5>
     </div>
 
-    <div id="content-{{post.id}}" style="display:none;" class="w3-container">
+    <div id="content-{{post.id}}" style="display:none; height: 300px; overflow-y: auto;" class="w3-container">
       {{post.content}}
     </div>
   </div>
