@@ -21,7 +21,7 @@ to get started with our awesome game!
 #### Mac
 
 [Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.app.zip) 
-and unzip the `.app` file. From there, "right-click" on the `.app` file and click "View Package Contents".
+and unzip the `.app` file. From there, "right-click" on the `.app` file and click "Show Package Contents".
 Navigate to the `Contents/MacOS/` folder and double-click the `Style_Boyz_The_Game` file.
 
 ### References
