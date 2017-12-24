@@ -23,7 +23,7 @@ to get started with our awesome game!
 [Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.zip) 
 and unzip! This took way more time to make, thanks Apple!
 
-### Acknowledgements
+### References
 The game was created using [Game Maker Studio 2](https://docs2.yoyogames.com/) and 
 the project is open source and can be viewed on 
 [Github](https://github.com/Jameywags/style_boyz_the_game).
