@@ -15,7 +15,7 @@ inside jokes, and get friendly input into the design of the levels!
 
 #### Windows
 
-[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/Style.Boyz.The.Game.exe) 
+[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.exe) 
 to get started with our awesome game!
 
 #### Mac
