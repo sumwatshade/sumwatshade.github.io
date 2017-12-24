@@ -11,7 +11,7 @@ a solid base of enemy layout, and worked on some game design features that will
 propagate through future releases. As it matures, we hope to fill our game with
 inside jokes, and get friendly input into the design of the levels!
 
-[Click Here](lukeshadler.tech%2Fassets%2FStyle%2520Boyz%2520The%2520Game.exe) to get started with our awesome game!
+[Click Here](https://lukeshadler.tech/assets/Style%20Boyz%20The%20Game.exe) to get started with our awesome game!
 
 The game was created using [Game Maker Studio 2](https://docs2.yoyogames.com/) and the project is open source
 and can be viewed on [Github](https://github.com/Jameywags/style_boyz_the_game).
