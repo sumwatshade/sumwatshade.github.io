@@ -20,7 +20,7 @@ to get started with our awesome game!
 
 #### Mac
 
-[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.app.zip) 
+[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.zip) 
 and unzip! This took way more time to make, thanks Apple!
 
 ### Acknowledgements
