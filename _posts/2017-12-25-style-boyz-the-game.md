@@ -20,8 +20,9 @@ to get started with our awesome game!
 
 #### Mac
 
-[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.zip) 
-and unzip! This took way more time to make, thanks Apple!
+[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.exe) 
+and unzip the `.app` file. From there, "right-click" on the `.app` file and click "View Package Contents".
+Navigate to the `Contents/MacOS/` folder and double-click the `Style_Boyz_The_Game` file.
 
 ### References
 The game was created using [Game Maker Studio 2](https://docs2.yoyogames.com/) and 
