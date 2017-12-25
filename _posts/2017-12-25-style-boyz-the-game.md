@@ -11,6 +11,10 @@ a solid base of enemy layout, and worked on some game design features that will
 propagate through future releases. As it matures, we hope to fill our game with
 inside jokes, and get friendly input into the design of the levels!
 
+### Creaters Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6pyqKvy5KPA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
 ### Installing the game
 
 #### Windows
@@ -31,6 +35,4 @@ The game was created using [Game Maker Studio 2](https://docs2.yoyogames.com/) a
 the project is open source and can be viewed on 
 [Github](https://github.com/Jameywags/style_boyz_the_game).
 
-### Creaters Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6pyqKvy5KPA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
