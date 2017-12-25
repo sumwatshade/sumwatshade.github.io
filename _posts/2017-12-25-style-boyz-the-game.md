@@ -33,7 +33,4 @@ the project is open source and can be viewed on
 
 ### Creaters Video
 
-<video width="400" controls>
-  <source src="/assets/sbg_christmas.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6pyqKvy5KPA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
