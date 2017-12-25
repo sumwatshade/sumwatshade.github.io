@@ -30,3 +30,10 @@ related to "Damaged files", you will need to loosen the security settings of you
 The game was created using [Game Maker Studio 2](https://docs2.yoyogames.com/) and 
 the project is open source and can be viewed on 
 [Github](https://github.com/Jameywags/style_boyz_the_game).
+
+### Creaters Video
+
+<video width="400" controls>
+  <source src="/assets/sbg_christmas.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
