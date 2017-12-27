@@ -23,7 +23,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
   {% for post in site.posts %}
-  <div class="w3-card-4 w3-margin w3-white">
+  <div class="w3-card-4 w3-margin w3-sand">
     <div class="w3-container">
       <input id="button-{{post.id}}" type="button" style="float:right;margin-top:30px" class="w3-button w3-teal" name="Show More..." value="Show More..." onclick="toggleDiv('{{post.id}}')"/>
       <h3><b>{{ post.title }}</b></h3>
@@ -43,7 +43,7 @@ and is wrapped around the whole page content, except for the footer in this exam
   <!-- About Card -->
   <div class="w3-card-2 w3-margin w3-margin-top">
   <img src="assets/Luke_portrait_01.jpg" alt="luke-portrait" style="width:100%">
-    <div class="w3-container w3-white">
+    <div class="w3-container w3-sand">
       <h4><b>Lucas Shadler</b></h4>
       <p>Starting as a Physicist, I quickly discovered that my true love and passion
       was found in the realm of development. Follow me as I tackle the amazing world
