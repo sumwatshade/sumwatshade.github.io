@@ -19,20 +19,18 @@ inside jokes, and get friendly input into the design of the levels!
 
 #### Windows
 
-[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.exe) 
+[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.exe)
 to get started with our awesome game!
 
 #### Mac
 
-[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.app.zip) 
-and unzip the `.app` file. From there, "right-click" on the `.app` file and click "Show Package Contents". 
-Navigate to the `Contents/MacOS/` folder and double-click the `Style_Boyz_The_Game` file. When the dialog opens 
+[Click Here](https://github.com/Jameywags/style_boyz_the_game/releases/download/0.0.1/StyleBoyzTheGame.app.zip)
+and unzip the `.app` file. From there, "right-click" on the `.app` file and click "Show Package Contents".
+Navigate to the `Contents/MacOS/` folder and double-click the `Style_Boyz_The_Game` file. When the dialog opens
 up, click "Open" (Hopefully you will trust us :D). If no dialog appears, or the dialog displays a notification
 related to "Damaged files", you will need to loosen the security settings of your system.
 
 ### References
-The game was created using [Game Maker Studio 2](https://docs2.yoyogames.com/) and 
-the project is open source and can be viewed on 
+The game was created using [Game Maker Studio 2](https://www.yoyogames.com/gamemaker) and 
+the project is open source and can be viewed on
 [Github](https://github.com/Jameywags/style_boyz_the_game).
-
-
