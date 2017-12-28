@@ -8,29 +8,6 @@ permalink: band
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px;">
 
-  <!-- Automatic Slideshow Images -->
-  <!-- <div class="mySlides w3-display-container w3-center">
-    <img src="/assets/slideshow_01.jpeg" style="width:100%;height:800px">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Boulder Coffee</h3>
-      <p><b>December artist showcase!</b></p>
-    </div>
-  </div> -->
-  <!-- <div class="mySlides w3-display-container w3-center">
-    <img src="/assets/slideshow_02.jpg" alt="Boulder01" style="width:100%;height:800px">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>"Sing It Like Dean"</h3>
-      <p><b>A Michael Pinales original performed live!</b></p>
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/assets/slideshow_03.jpg" alt="Boulder02" style="width:100%;height:800px">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Boulder Coffee</h3>
-      <p><b>December artist showcase!</b></p>
-    </div>
-  </div> -->
-
   <!-- The Band Section -->
   <div class="w3-sand" id="band">
     <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
@@ -95,42 +72,5 @@ permalink: band
 
 <!-- End Page Content -->
 </div>
-
-<script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 4000);
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
 </body>
 </html>
