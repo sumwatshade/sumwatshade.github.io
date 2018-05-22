@@ -31,6 +31,6 @@ up, click "Open" (Hopefully you will trust us :D). If no dialog appears, or the 
 related to "Damaged files", you will need to loosen the security settings of your system.
 
 ### References
-The game was created using [Game Maker Studio 2](https://www.yoyogames.com/gamemaker) and 
+The game was created using [Game Maker Studio 2](https://www.yoyogames.com/) and 
 the project is open source and can be viewed on
 [Github](https://github.com/Jameywags/style_boyz_the_game).
