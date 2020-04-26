@@ -1,0 +1,26 @@
+# CircleCI Firebase Deployment Config
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:dubnium
+    working_directory: ~/gatsby-site
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "yarn.lock" }}
+            - v1-npm-deps-
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          key: v1-npm-deps-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Build
+          command: yarn build
