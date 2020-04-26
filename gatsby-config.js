@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: 'https://lshadler.github.io/',
     author: {
       name: 'Lucas Shadler',
+      url: 'https://github.intuit.com/lshadler',
       email: 'lshadler13@gmail.com'
     }
   },
@@ -16,7 +17,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'content',
-        path: `${__dirname}/src/content`
+        path: `${__dirname}/src/content/posts`
       }
     },
     {
