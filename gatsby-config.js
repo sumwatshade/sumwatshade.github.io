@@ -2,14 +2,13 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'gatsby-starter-typescript-plus',
-    description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
-    keywords: 'gatsbyjs, gatsby, javascript, sample, something',
-    siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
+    title: 'lshadler.github.io',
+    description: 'A personal website for Lucas Shadler',
+    keywords: 'gatsbyjs, gatsby, javascript, resume, portfolio',
+    siteUrl: 'https://lshadler.github.io/',
     author: {
-      name: 'Resi Respati',
-      url: 'https://twitter.com/resir014',
-      email: 'resir014@gmail.com'
+      name: 'Lucas Shadler',
+      email: 'lshadler13@gmail.com'
     }
   },
   plugins: [
@@ -45,12 +44,12 @@ module.exports = {
       }
     },
     'gatsby-transformer-json',
-    {
-      resolve: 'gatsby-plugin-canonical-urls',
-      options: {
-        siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-canonical-urls',
+    //   options: {
+    //     siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com'
+    //   }
+    // },
     'gatsby-plugin-emotion',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
