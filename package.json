@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-typescript-plus",
-  "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
+  "name": "lshadler.github.io",
+  "description": "A personal website for resume, portfolio, and blog",
   "version": "1.0.0",
   "private": true,
-  "author": "Resi Respati <resir014@gmail.com>",
+  "author": "Lucas Shadler <lshadler13@gmail.com>",
   "keywords": [
     "gatsby"
   ],
@@ -13,11 +13,11 @@
     "build": "gatsby build",
     "clean": "rimraf public",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "start": "yarn dev",
     "dev": "gatsby develop",
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "start": "npm run dev",
-    "test": "npm run type-check && npm run lint",
+    "test": "yarn type-check && yarn lint",
     "type-check": "tsc"
   },
   "engines": {
