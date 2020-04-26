@@ -32,8 +32,8 @@ const Blog = ({data} : BlogProps) => {
     <IndexLayout>
       <Page>
         <Container>
-          <h1>Blog</h1>
-          <p>A collection of projects and writings from me!</p>
+          <h1>Develop-Mental</h1>
+          <p>Welcome to the blog of Lucas Shadler </p>
           <ul>
             {posts.map(({node: {fields, frontmatter}}:PostData) => (
               <li><Link to={fields.slug}>{frontmatter.title}</Link></li>
