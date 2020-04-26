@@ -12,8 +12,13 @@ const IndexPage = () => (
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
-        <Link to="/blog/">Go to blog</Link>
-        <Link to="/resume/">Go to resume</Link>
+        <ul>
+          <li><Link to="/blog/">Blog</Link></li>
+          <li><Link to="/resume/">Resume</Link></li>
+          <li><Link to="/band/">Band</Link></li>
+        </ul>
+        
+        
       </Container>
     </Page>
   </IndexLayout>
