@@ -4,9 +4,26 @@ import * as React from 'react'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
-const Heading = () => (
+import Img, { FixedObject } from "gatsby-image";
+import { graphql } from 'gatsby';
+
+interface HeadingProps {
+  imageSrc: FixedObject
+}
+
+interface ResumeProps {
+  data: {
+    file: {
+      childImageSharp: {
+        fixed: FixedObject
+      }
+    }
+  }
+}
+
+const Heading = ({imageSrc}: HeadingProps) => (
     <div>
-        <img src="../content/assets/Luke_portrait_01.jpg" alt="Avatar" />
+    <Img fixed={imageSrc} alt="Avatar" />
         <div>
             <h2>Lucas Shadler</h2>
         </div>
@@ -196,11 +213,13 @@ const Education = () => (
     </>
 );
 
-const Resume = () => (
+
+
+const Resume = ({data}: ResumeProps) => (
     <IndexLayout>
         <Page>
             <Container>
-                <Heading />
+                <Heading imageSrc={data.file.childImageSharp.fixed}/>
                 <Skills />
                 <WorkExperience />
                 <AcademicExperience />
@@ -210,4 +229,18 @@ const Resume = () => (
     </IndexLayout>    
 );
 
-export default Resume
+export default Resume;
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "Luke_portrait_01.jpg" }) {
+      childImageSharp {
+          # Specify the image processing specifications right in the query.
+          # Makes it trivial to update as your page's design changes.
+          fixed(width: 125, height: 125) {
+            ...GatsbyImageSharpFixed
+          }
+      }
+    }
+  }
+`

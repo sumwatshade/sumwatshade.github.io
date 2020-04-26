@@ -3,33 +3,54 @@ import * as React from 'react'
 import PageLayout from "../layouts";
 import Page from "../components/Page";
 import Container from "../components/Container";
+import { graphql } from 'gatsby';
+import Img, { FixedObject } from 'gatsby-image';
 
-const BandMembers = () => (
-    <>
-        <h2 >The Good Enoughs</h2>
-        <p ><i>Not great, but It'll work</i></p>
-        <p >The four members of the band originally played together in a thrash metal band throughtout high school. As they developed as musicians, each member branched out into a wide array of genres and influences. As we came back to play music with each
-    other, we were able to bring together the sounds of classic rock, surf rock, folk, and pop influences to create a unique sound.</p>
-        <div >
+interface SharpFileProps {
+    childImageSharp: {
+        fixed: FixedObject
+    }
+}
+
+interface BandQueryProps {
+    data: {
+        luke: SharpFileProps,
+        eric: SharpFileProps,
+        mike: SharpFileProps,
+        jon: SharpFileProps,
+    }
+}
+
+
+const BandMembers = ({data}: BandQueryProps) => {
+
+    return (
+        <>
+            <h2 >The Good Enoughs</h2>
+            <p ><i>Not great, but It'll work</i></p>
+            <p >The four members of the band originally played together in a thrash metal band throughtout high school. As they developed as musicians, each member branched out into a wide array of genres and influences. As we came back to play music with each
+        other, we were able to bring together the sounds of classic rock, surf rock, folk, and pop influences to create a unique sound.</p>
             <div >
-                <p>Lucas Shadler</p>
-                <img src="/assets/luke_school_pic.jpg" alt="Lucas Shadler" />
+                <div >
+                    <p>Lucas Shadler</p>
+                    <Img fixed={data.luke.childImageSharp.fixed} alt="Lucas Shadler" />
+                </div>
+                <div >
+                    <p>Eric Pinales</p>
+                    <Img fixed={data.eric.childImageSharp.fixed} alt="Michael Pinales" />
+                </div>
+                <div >
+                    <p>Mike Pinales</p>
+                    <Img fixed={data.mike.childImageSharp.fixed} alt="Eric Pinales" />
+                </div>
+                <div >
+                    <p>Jon Bishop</p>
+                    <Img fixed={data.jon.childImageSharp.fixed} alt="Jon Bishop" />
+                </div>
             </div>
-            <div >
-                <p>Eric Pinales</p>
-                <img src="/assets/eric_school_pic.jpg" alt="Michael Pinales" />
-            </div>
-            <div >
-                <p>Mike Pinales</p>
-                <img src="/assets/mike_school_pic.jpg" alt="Eric Pinales" />
-            </div>
-            <div >
-                <p>Jon Bishop</p>
-                <img src="/assets/jon_school_pic.jpg" alt="Jon Bishop" />
-            </div>
-        </div>
-    </>
-);
+        </>
+    );
+};
 
 const Albums = () => (
     <>
@@ -57,11 +78,11 @@ const Contact = () => (
     </>
 );
 
-const BandPage = () => (
+const BandPage = (props: BandQueryProps) => (
     <PageLayout>
         <Page>
             <Container>
-                <BandMembers />
+                <BandMembers {...props}/>
                 <Albums />
                 <Contact />
             </Container>
@@ -70,3 +91,44 @@ const BandPage = () => (
 );
 
 export default BandPage;
+
+export const query = graphql`
+query {
+    luke: file(relativePath: { eq: "luke_school_pic.jpg" }) {
+        childImageSharp {
+            # Specify the image processing specifications right in the query.
+            # Makes it trivial to update as your page's design changes.
+            fixed(width: 125) {
+            ...GatsbyImageSharpFixed
+            }
+        }
+    }
+    eric: file(relativePath: { eq: "eric_school_pic.jpg" }) {
+        childImageSharp {
+            # Specify the image processing specifications right in the query.
+            # Makes it trivial to update as your page's design changes.
+            fixed(width: 125) {
+            ...GatsbyImageSharpFixed
+            }
+        }
+    }
+    mike: file(relativePath: { eq: "mike_school_pic.jpg" }) {
+        childImageSharp {
+            # Specify the image processing specifications right in the query.
+            # Makes it trivial to update as your page's design changes.
+            fixed(width: 125) {
+            ...GatsbyImageSharpFixed
+            }
+        }
+    }
+    jon: file(relativePath: { eq: "jon_school_pic.jpg" }) {
+        childImageSharp {
+            # Specify the image processing specifications right in the query.
+            # Makes it trivial to update as your page's design changes.
+            fixed(width: 125) {
+            ...GatsbyImageSharpFixed
+            }
+        }
+    }
+}
+`
