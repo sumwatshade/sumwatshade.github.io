@@ -72,6 +72,8 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "gh-pages": "^2.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3"
   }
