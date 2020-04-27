@@ -1,94 +1,58 @@
 
 import * as React from 'react';
 
-import Img, { FixedObject } from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 import { graphql } from 'gatsby';
+import styled from '@emotion/styled';
 import Page from '../components/Page';
-import Container from '../components/Container';
 import IndexLayout from '../layouts';
-import { FixedImageQuery } from '../types.ts';
+import { FluidImageQuery } from '../types.ts';
+import SkillBar from '../components/SkillBar';
 
-interface HeadingProps {
-  imageSrc: FixedObject
+import { colors } from '../styles/variables';
+import { getEmSize } from '../styles/mixins';
+
+const ResumeContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+`;
+
+interface LeftContentProps {
+  file: {
+    childImageSharp: {
+      fluid: FluidObject
+    }
+  }
 }
-
-const Heading = ({ imageSrc }: HeadingProps) => (
+const LeftContent = (data: LeftContentProps) => (
   <div>
-    <Img fixed={imageSrc} alt="Avatar" />
+    <Img fluid={data.file.childImageSharp.fluid} alt="Avatar" />
+    {/* TODO: Implement PDF resume here */}
     <div>
-      <h2>Lucas Shadler</h2>
-    </div>
-  </div>
-);
+      <p>Developer and Scientist</p>
+      <p>New York, USA</p>
+      <p>lshadler13@gmail.com</p>
+      <p>(585)766-7886</p>
+      <hr />
 
-const Skills = () => (
-  <div>
+      <h2>Skills</h2>
+      <SkillBar skillName="Mathematics" pct="90" />
+      <SkillBar skillName="Data Analytics and Visualization" pct="85" />
+      <SkillBar skillName="Machine Learning" pct="60" />
+      <SkillBar skillName="Economic Game Theory" pct="40" />
+      <SkillBar skillName="Computational Astrophysics" pct="90" />
 
-    <div>
-      <div>
-        <form method="get" action="assets/resume.pdf">
-          <button type="submit">PDF Version</button>
-        </form>
-      </div>
-      <div>
-        <p>Developer and Scientist</p>
-        <p>New York, USA</p>
-        <p>lshadler13@gmail.com</p>
-        <p>(585)766-7886</p>
-        <hr />
-
-        <p><b>Skills</b></p>
-        <p>Mathematics</p>
-        <div>
-          <div style={{ height: '24px', width: '90%' }} />
-        </div>
-        <p>Data Analytics and Visualization</p>
-        <div>
-          <div style={{ height: '24px', width: '85%' }} />
-        </div>
-        <p>Machine Learning</p>
-        <div>
-          <div style={{ height: '24px', width: '60%' }} />
-        </div>
-        <p>Economic Game Theory</p>
-        <div>
-          <div style={{ height: '24px', width: '50%' }} />
-        </div>
-        <p>Computational Astrophysics</p>
-        <div>
-          <div style={{ height: '24px', width: '90%' }} />
-        </div>
-
-        <p><b>Languages</b></p>
-        <p>Python</p>
-        <div>
-          <div style={{ height: '24px', width: '95%' }} />
-        </div>
-        <p>C</p>
-        <div>
-          <div style={{ height: '24px', width: '60%' }} />
-        </div>
-        <p>Java</p>
-        <div>
-          <div style={{ height: '24px', width: '80%' }} />
-        </div>
-        <p>C++</p>
-        <div>
-          <div style={{ height: '24px', width: '40%' }} />
-        </div>
-        <p>Javascript</p>
-        <div>
-          <div style={{ height: '24px', width: '85%' }} />
-        </div>
-        <p>Assembly (MIPS)</p>
-        <div>
-          <div style={{ height: '24px', width: '50%' }} />
-        </div>
-        <p>MySQL</p>
-        <div>
-          <div style={{ height: '24px', width: '85%' }} />
-        </div>
-      </div>
+      <h2>Languages</h2>
+      <SkillBar skillName="Python" pct="90" />
+      <SkillBar skillName="Javascript" pct="95" />
+      <SkillBar skillName="C99" pct="60" />
+      <SkillBar skillName="Java" pct="80" />
+      <SkillBar skillName="C++" pct="40" />
+      <SkillBar skillName="Assembly (MIPS)" pct="45" />
+      <SkillBar skillName="MySQL" pct="85" />
     </div>
   </div>
 );
@@ -98,7 +62,7 @@ const WorkExperience = () => (
     <h2>Work Experience</h2>
     <div>
       <h5><b>Full Stack Software Developer / Solu Technology Partners</b></h5>
-      <h6>July 2017 - Present</h6>
+      <h6>July 2017 - January 2018</h6>
       <p>
         <ul>
           <li>
@@ -267,16 +231,32 @@ const Education = () => (
 );
 
 
-const Resume = ({ data }: FixedImageQuery) => (
+const LeftPanel = styled.div`
+  background-color: ${colors.white};
+  border: ${getEmSize(1)}em solid ${colors.black};
+  border-radius: 5px;
+  padding: 2em;
+  margin: 1em;
+  flex: 1;
+`;
+
+const RightPanel = styled(LeftPanel)`
+  flex: 2;
+`;
+
+const Resume = ({ data }: FluidImageQuery) => (
   <IndexLayout>
     <Page>
-      <Container>
-        <Heading imageSrc={data.file.childImageSharp.fixed} />
-        <Skills />
-        <WorkExperience />
-        <AcademicExperience />
-        <Education />
-      </Container>
+      <ResumeContainer>
+        <LeftPanel>
+          <LeftContent file={data.file} />
+        </LeftPanel>
+        <RightPanel>
+          <WorkExperience />
+          <AcademicExperience />
+          <Education />
+        </RightPanel>
+      </ResumeContainer>
     </Page>
   </IndexLayout>
 );
@@ -289,8 +269,8 @@ export const query = graphql`
       childImageSharp {
           # Specify the image processing specifications right in the query.
           # Makes it trivial to update as your page's design changes.
-          fixed(width: 125, height: 125) {
-            ...GatsbyImageSharpFixed
+          fluid {
+            ...GatsbyImageSharpFluid
           }
       }
     }
