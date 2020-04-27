@@ -1,10 +1,13 @@
 import * as React from 'react';
 
 import { graphql } from 'gatsby';
-import Img, { FixedObject } from 'gatsby-image';
+import { FixedObject } from 'gatsby-image';
+import styled from '@emotion/styled';
 import PageLayout from '../layouts';
 import Page from '../components/Page';
 import Container from '../components/Container';
+import BandMemberCard from '../components/BandMemberCard';
+import { colors } from '../styles/variables';
 
 interface SharpFileProps {
     childImageSharp: {
@@ -21,6 +24,11 @@ interface BandQueryProps {
     }
 }
 
+const BandMemberCards = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+`;
 
 const BandMembers = ({ data }: BandQueryProps) => (
   <>
@@ -34,62 +42,63 @@ const BandMembers = ({ data }: BandQueryProps) => (
       other, we were able to bring together the sounds of classic rock, surf
       rock, folk, and pop influences to create a unique sound.
     </p>
-    <div>
-      <div>
-        <p>Lucas Shadler</p>
-        <Img fixed={data.luke.childImageSharp.fixed} alt="Lucas Shadler" />
-      </div>
-      <div>
-        <p>Eric Pinales</p>
-        <Img fixed={data.eric.childImageSharp.fixed} alt="Michael Pinales" />
-      </div>
-      <div>
-        <p>Mike Pinales</p>
-        <Img fixed={data.mike.childImageSharp.fixed} alt="Eric Pinales" />
-      </div>
-      <div>
-        <p>Jon Bishop</p>
-        <Img fixed={data.jon.childImageSharp.fixed} alt="Jon Bishop" />
-      </div>
-    </div>
+    <BandMemberCards>
+      <BandMemberCard fixed={data.luke.childImageSharp.fixed} name="Luke Shadler" />
+      <BandMemberCard fixed={data.eric.childImageSharp.fixed} name="Eric Pinales" />
+      <BandMemberCard fixed={data.mike.childImageSharp.fixed} name="Mike Pinales" />
+      <BandMemberCard fixed={data.jon.childImageSharp.fixed} name="Jon Bishop" />
+    </BandMemberCards>
   </>
 );
+
+const AlbumsContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 1em;
+
+`;
+
+const AlbumDisplay = styled.div`
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${colors.white};
+  border-radius: 5px;
+  padding: 1em; 
+  border: 1px solid ${colors.black};
+`;
 
 const Albums = () => (
   <>
-    <div id="aigt">
-      <h2>All In Good Time</h2>
-    </div>
+    <h2>Albums</h2>
+    <p><i>You didn&apos;t come here to read...</i></p>
+    <AlbumsContainer>
+      <AlbumDisplay id="aigt">
+        <h2>All In Good Time (2018)</h2>
+        <iframe
+          title="aigt-bc"
+          style={{ border: 0, width: '350px', height: '753px' }}
+          src="https://bandcamp.com/EmbeddedPlayer/album=1776460933/size=large/bgcol=333333/linkcol=ffffff/transparent=true/"
+          seamless
+        >
+          <a href="http://thegoodenoughs.bandcamp.com/album/all-in-good-time">All in Good Time by The Good Enoughs</a>
+        </iframe>
+      </AlbumDisplay>
 
-    <div id="twss">
-      <h2>Things We Shouldnt Say</h2>
-      <p><i>Where the sound began!</i></p>
-      <br />
-      <iframe
-        title="twss-bandcamp"
-        src="https://bandcamp.com/EmbeddedPlayer/album=3522776097/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
-        seamless
-      >
-        <a href="http://lshadler.bandcamp.com/album/things-we-shouldnt-say">Things We Shouldn&#39;t Say by Lucas Shadler</a>
-      </iframe>
-    </div>
-  </>
-);
-
-const Contact = () => (
-  <>
-    <h2>CONTACT</h2>
-    <p>Fan? Drop a note!</p>
-    <div>
-      Rochester, NY
-      <br />
-      Phone: (585)766-7886
-      <br />
-      Email:
-      {' '}
-      <a href="mailto:goodenoughsband@gmail.com">goodenoughsband@gmail.com</a>
-      <br />
-    </div>
+      <AlbumDisplay id="twss">
+        <h2>Things We Shouldnt Say (2016)</h2>
+        <iframe
+          title="tyss-bc"
+          style={{ border: 0, width: '350px', height: '720px' }}
+          src="https://bandcamp.com/EmbeddedPlayer/album=3522776097/size=large/bgcol=333333/linkcol=ffffff/transparent=true/"
+          seamless
+        >
+          <a href="http://lshadler.bandcamp.com/album/things-we-shouldnt-say">Things We Shouldn&#39;t Say by Lucas Shadler</a>
+        </iframe>
+      </AlbumDisplay>
+    </AlbumsContainer>
   </>
 );
 
@@ -99,7 +108,6 @@ const BandPage = ({ data }: BandQueryProps) => (
       <Container>
         <BandMembers data={data} />
         <Albums />
-        <Contact />
       </Container>
     </Page>
   </PageLayout>

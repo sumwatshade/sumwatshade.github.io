@@ -22,5 +22,8 @@ jobs:
           name: Lint
           command: yarn lint
       - run:
+          name: Type Check
+          command: yarn type-check
+      - run:
           name: Build
           command: yarn build
