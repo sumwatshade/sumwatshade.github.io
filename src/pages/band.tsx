@@ -7,7 +7,6 @@ import PageLayout from '../layouts';
 import Page from '../components/Page';
 import Container from '../components/Container';
 import BandMemberCard from '../components/BandMemberCard';
-import { colors } from '../styles/variables';
 
 interface SharpFileProps {
     childImageSharp: {
@@ -64,10 +63,7 @@ const AlbumDisplay = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${colors.white};
-  border-radius: 5px;
   padding: 1em; 
-  border: 1px solid ${colors.black};
 `;
 
 const Albums = () => (

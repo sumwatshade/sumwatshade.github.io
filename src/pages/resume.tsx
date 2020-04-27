@@ -12,6 +12,10 @@ import SkillBar from '../components/SkillBar';
 import { colors } from '../styles/variables';
 import { getEmSize } from '../styles/mixins';
 
+const ResumePage = styled(Page)`
+  padding: 0;
+`;
+
 const ResumeContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -246,7 +250,7 @@ const RightPanel = styled(LeftPanel)`
 
 const Resume = ({ data }: FluidImageQuery) => (
   <IndexLayout>
-    <Page>
+    <ResumePage>
       <ResumeContainer>
         <LeftPanel>
           <LeftContent file={data.file} />
@@ -257,7 +261,7 @@ const Resume = ({ data }: FluidImageQuery) => (
           <Education />
         </RightPanel>
       </ResumeContainer>
-    </Page>
+    </ResumePage>
   </IndexLayout>
 );
 
