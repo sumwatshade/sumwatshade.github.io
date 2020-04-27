@@ -3,7 +3,9 @@ import styled from '@emotion/styled';
 import { transparentize } from 'polished';
 import { Link } from 'gatsby';
 
-import { heights, dimensions, colors } from '../styles/variables';
+import {
+  heights, dimensions, colors,
+} from '../styles/variables';
 import Container from './Container';
 
 const StyledHeader = styled.header`
@@ -22,7 +24,7 @@ const HeaderInner = styled(Container)`
 
 const HomepageLink = styled(Link)`
   color: ${colors.white};
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
 
   &:hover,
