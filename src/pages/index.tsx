@@ -1,32 +1,81 @@
 import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import Img from 'gatsby-image';
+import styled from '@emotion/styled';
 import Page from '../components/Page';
-import Container from '../components/Container';
 import IndexLayout from '../layouts';
-import { FluidImageQuery } from '../types.ts';
 
-const IndexPage = ({ data: { file } }: FluidImageQuery) => (
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+
+const Window = styled.div`
+  border-radius: 3px;
+  background: #222;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  width: 70%;
+  
+  &:before {
+    content: ' ';
+    display: block;
+    height: 48px;
+    background: #C6C6C6;
+  }
+  
+  &:after {
+    content: '. . .';
+    position: absolute;
+    left: 12px;
+    right: 0;
+    top: -3px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 96px;
+    color: #fff;
+    line-height: 0;
+    letter-spacing: -12px;
+  }
+`;
+
+const Terminal = styled.div`
+  margin: 20px;
+  font-family: monospace;
+  font-size: 16px;
+  color: #22da26;
+}`;
+
+const Command = styled.p`
+  width: 100%;
+  white-space: wrap;
+  overflow: wrap;
+  animation: write-command 5s both;
+  
+  &:before {
+    content: '$ ';
+    color: #22da26;
+  }
+`;
+
+
+const IndexPage = () => (
   <IndexLayout>
     <Page>
       <Container>
-        <h1>Welcome to 2.0 of my personal site!</h1>
-
-        <Img fluid={file.childImageSharp.fluid} alt="Luke Shadler" />
-
-        <p>
-          My name is Luke Shadler. I am a Full-Stack Software Engineer
-          based in San Diego, California.
-        </p>
-        <code>$&gt; Let&apos;s go make something cool.</code>
-        <ul>
-          <li><Link to="/blog">Blog</Link></li>
-          <li><Link to="/resume">Resume</Link></li>
-          <li><Link to="/band">Band</Link></li>
-        </ul>
-
-
+        <Window>
+          <Terminal>
+            <Command>Welcome to 2.0 of my personal site!</Command>
+            <Command>
+              My name is Luke Shadler. I am a Full-Stack Software Engineer
+              based in San Diego, California.
+            </Command>
+            <Command>Let&apos;s go make something cool!</Command>
+          </Terminal>
+        </Window>
       </Container>
     </Page>
   </IndexLayout>

@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
+import styled from '@emotion/styled';
 import Page from '../components/Page';
 import Container from '../components/Container';
 import IndexLayout from '../layouts';
+import BlogListItem from '../components/BlogListItem';
 
 interface PostData {
   node: {
@@ -24,6 +26,10 @@ interface BlogProps {
   }
 }
 
+const BlogList = styled.ul`
+  list-style-type: none;
+`;
+
 const Blog = ({ data } : BlogProps) => {
   const { edges: posts } = data.allMarkdownRemark;
 
@@ -33,15 +39,15 @@ const Blog = ({ data } : BlogProps) => {
       <Page>
         <Container>
           <h1>Develop-Mental</h1>
-          <p>Welcome to the blog of Lucas Shadler </p>
-          <ul>
+          <p>
+            Welcome to my blog. Here, I have written about everything from
+            learning algorithms to social movements, to designing video games!
+          </p>
+          <BlogList>
             {posts.map(({ node: { fields, frontmatter } }:PostData) => (
-              <li><Link to={fields.slug}>{frontmatter.title}</Link></li>
+              <BlogListItem to={fields.slug} title={frontmatter.title} />
             ))}
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
+          </BlogList>
         </Container>
       </Page>
     </IndexLayout>

@@ -31,10 +31,10 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => (
   <IndexLayout>
     <Page>
       <Container>
+        <Link to="/blog">Return to blog</Link>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
         {/* eslint-disable-next-line react/no-danger */}
         <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-        <Link to="/blog">Return to blog</Link>
       </Container>
     </Page>
   </IndexLayout>
