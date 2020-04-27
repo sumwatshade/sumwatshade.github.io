@@ -37,7 +37,6 @@ const SkillBar: React.FC<SkillBarProps> = ({
     <h3>{skillName}</h3>
     <Container>
       <Bar style={{ width: `${pct}%` }}><Percentage>{`${pct}%`}</Percentage></Bar>
-
     </Container>
   </>
 );
