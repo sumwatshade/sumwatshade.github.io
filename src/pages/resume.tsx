@@ -101,9 +101,18 @@ const WorkExperience = () => (
       <h6>July 2017 - Present</h6>
       <p>
         <ul>
-          <li>Work as a member of a scrum team to provide state-of-the-art Angular Material applications</li>
-          <li>Integrate a MySQL database architecture with front-end components using the Spring Framework</li>
-          <li>Participate in code reviews to maintain a fast-paced consumer-focused agenda</li>
+          <li>
+            Work as a member of a scrum team to provide state-of-the-art
+            Angular Material applications
+          </li>
+          <li>
+            Integrate a MySQL database architecture with front-end components
+            using the Spring Framework
+          </li>
+          <li>
+            Participate in code reviews to maintain a fast-paced
+            consumer-focused agenda
+          </li>
         </ul>
       </p>
     </div>
@@ -125,10 +134,22 @@ const WorkExperience = () => (
       <h6>February 2018 - Present</h6>
       <p>
         <ul>
-          <li>Develop industry-leading experiences for authentication/authorization within the Financial sphere</li>
-          <li>Collaboration across several teams in a large company to develop robust solutions with great velocity</li>
-          <li>Uncompromising work ensuring that the product meets company standards and creates customer delight</li>
-          <li>Relevant Technologies: Javascript, ReactJS, Java, Spring/Spring Boot, Webpack, Python, Atlassian (JIRA)</li>
+          <li>
+            Develop industry-leading experiences for authentication/authorization within
+            the Financial sphere
+          </li>
+          <li>
+            Collaboration across several teams in a large company to develop robust
+            solutions with great velocity
+          </li>
+          <li>
+            Uncompromising work ensuring that the product meets company standards and
+            creates customer delight
+          </li>
+          <li>
+            Relevant Technologies: Javascript, ReactJS, Java, Spring/Spring Boot,
+            Webpack, Python, Atlassian (JIRA)
+          </li>
         </ul>
       </p>
     </div>
@@ -144,7 +165,10 @@ const AcademicExperience = () => (
       <p>
         <ul>
           <li>Developed an improved method of analyzing Gravitational Wave data</li>
-          <li>Use Markov Chain Monte Carlo methods with the benefits of parallel computing on powerful multi-core machines</li>
+          <li>
+            Use Markov Chain Monte Carlo methods with the benefits of parallel
+            computing on powerful multi-core machines
+          </li>
           <li>Written in C utilizing the OpenMP framework</li>
         </ul>
       </p>
@@ -154,7 +178,10 @@ const AcademicExperience = () => (
       <h6>Fall 2014 - Summer 2015</h6>
       <p>
         <ul>
-          <li>Wrote analysis and algorithmic code to calculate the energy of incoming neutrinos in a Neutral-Current Elastic reaction</li>
+          <li>
+            Wrote analysis and algorithmic code to calculate the energy of
+            incoming neutrinos in a Neutral-Current Elastic reaction
+          </li>
           <li>Work with the MINERvA detector, a large collaboration at Fermilab</li>
           <li>Extended to an REU at the University of Rochester</li>
         </ul>
@@ -165,9 +192,15 @@ const AcademicExperience = () => (
       <h6>2013 - 2015</h6>
       <p>
         <ul>
-          <li>Ran three-dimensional morpho-kinematical simulations aimed at confirming and analyzing the anticipated gas kinematics of active galactic nuclei</li>
+          <li>
+            Ran three-dimensional morpho-kinematical simulations aimed at confirming
+            and analyzing the anticipated gas kinematics of active galactic nuclei
+          </li>
           <li>Code developed in Java with collaboration with several groups</li>
-          <li>Led a week-long workshop at Universidade Federal do Rio Grande do Sol in Porto Allegre, Brazil</li>
+          <li>
+            Led a week-long workshop at Universidade Federal do Rio Grande do
+            Sol in Porto Allegre, Brazil
+          </li>
         </ul>
       </p>
     </div>
@@ -176,9 +209,18 @@ const AcademicExperience = () => (
       <h6>2013 - 2015</h6>
       <p>
         <ul>
-          <li>Developed a program using Matlab in order to analyze the flow rate of reaction from the main laser target bay into the waste systems</li>
-          <li>Analysis would calculate the current capacity of the molecular sieve beds and prompt workers when the system would require maintenance</li>
-          <li>Benefits to efficient task scheduling and limiting the risk of radiation leakage</li>
+          <li>
+            Developed a program using Matlab in order to analyze the flow rate of
+            reaction from the main laser target bay into the waste systems
+          </li>
+          <li>
+            Analysis would calculate the current capacity of the molecular sieve
+            beds and prompt workers when the system would require maintenance
+          </li>
+          <li>
+            Benefits to efficient task scheduling and limiting the risk of
+            radiation leakage
+          </li>
         </ul>
       </p>
     </div>
@@ -198,17 +240,20 @@ const Education = () => (
           <li>
             <b>Computer Science:</b>
             {' '}
-            Principles of C, Computer Science Theory, Computer Architecture, Compilers, Data Structures and Algorithms, Databases
+            Principles of C, Computer Science Theory, Computer Architecture,
+            Compilers, Data Structures and Algorithms, Databases
           </li>
           <li>
             <b>Mathematics:</b>
             {' '}
-            Multivariable Calculus, Probability and Statistics, Differential Equations, Advanced Linear Algebra, Numerical Linear Algebra
+            Multivariable Calculus, Probability and Statistics, Differential
+            Equations, Advanced Linear Algebra, Numerical Linear Algebra
           </li>
           <li>
             <b>Physics:</b>
             {' '}
-            Electricity and Magnetism, Classical Mechanics, Statistical Mechanics, Quantum Mechanics, Solid State Physics, Physical Optics
+            Electricity and Magnetism, Classical Mechanics, Statistical Mechanics,
+            Quantum Mechanics, Solid State Physics, Physical Optics
           </li>
           <li>
             <b>Engineering:</b>

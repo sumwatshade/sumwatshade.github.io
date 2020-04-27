@@ -15,8 +15,11 @@ const IndexPage = ({ data: { file } }: FluidImageQuery) => (
 
         <Img fluid={file.childImageSharp.fluid} alt="Luke Shadler" />
 
-        <p>My name is Luke Shadler. I am a Full-Stack Software Engineer based in San Diego, California.</p>
-        <code>$> Let's go make something cool.</code>
+        <p>
+          My name is Luke Shadler. I am a Full-Stack Software Engineer
+          based in San Diego, California.
+        </p>
+        <code>$&gt; Let&apos;s go make something cool.</code>
         <ul>
           <li><Link to="/blog/">Blog</Link></li>
           <li><Link to="/resume/">Resume</Link></li>
