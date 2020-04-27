@@ -1,4 +1,5 @@
-import { FluidObject, FixedObject } from "gatsby-image";
+// eslint-disable-next-line no-unused-vars
+import { FluidObject, FixedObject } from 'gatsby-image';
 
 export interface FluidImageQuery {
     data: {

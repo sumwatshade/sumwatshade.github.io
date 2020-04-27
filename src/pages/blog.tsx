@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { Link, graphql } from 'gatsby'
+import * as React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Page from '../components/Page'
-import Container from '../components/Container'
-import IndexLayout from '../layouts'
+import Page from '../components/Page';
+import Container from '../components/Container';
+import IndexLayout from '../layouts';
 
 interface PostData {
   node: {
@@ -24,8 +24,8 @@ interface BlogProps {
   }
 }
 
-const Blog = ({data} : BlogProps) => {
-  const {edges: posts} = data.allMarkdownRemark;
+const Blog = ({ data } : BlogProps) => {
+  const { edges: posts } = data.allMarkdownRemark;
 
 
   return (
@@ -35,7 +35,7 @@ const Blog = ({data} : BlogProps) => {
           <h1>Develop-Mental</h1>
           <p>Welcome to the blog of Lucas Shadler </p>
           <ul>
-            {posts.map(({node: {fields, frontmatter}}:PostData) => (
+            {posts.map(({ node: { fields, frontmatter } }:PostData) => (
               <li><Link to={fields.slug}>{frontmatter.title}</Link></li>
             ))}
             <li>
@@ -45,10 +45,10 @@ const Blog = ({data} : BlogProps) => {
         </Container>
       </Page>
     </IndexLayout>
-  )
-}
+  );
+};
 
-export default Blog
+export default Blog;
 
 export const query = graphql`
   query GetMarkdownPage {
@@ -65,4 +65,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

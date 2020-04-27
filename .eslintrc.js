@@ -24,5 +24,21 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": 0,
+    'import/extensions': ['error', 'ignorePackages', {
+      js: 'never',
+      mjs: 'never',
+      jsx: 'never',
+      ts: 'never',
+      tsx: 'never',
+    }],
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
 };

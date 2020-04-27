@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { graphql, Link } from 'gatsby'
+import * as React from 'react';
+import { graphql, Link } from 'gatsby';
 
-import Page from '../components/Page'
-import Container from '../components/Container'
-import IndexLayout from '../layouts'
+import Page from '../components/Page';
+import Container from '../components/Container';
+import IndexLayout from '../layouts';
 
 interface PostTemplateProps {
   data: {
@@ -38,9 +38,9 @@ const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => (
       </Container>
     </Page>
   </IndexLayout>
-)
+);
 
-export default PostTemplate
+export default PostTemplate;
 
 export const query = graphql`
   query PostTemplateQuery($slug: String!) {
@@ -62,4 +62,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
