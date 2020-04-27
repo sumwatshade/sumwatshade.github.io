@@ -21,9 +21,9 @@ const IndexPage = ({ data: { file } }: FluidImageQuery) => (
         </p>
         <code>$&gt; Let&apos;s go make something cool.</code>
         <ul>
-          <li><Link to="/blog/">Blog</Link></li>
-          <li><Link to="/resume/">Resume</Link></li>
-          <li><Link to="/band/">Band</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/resume">Resume</Link></li>
+          <li><Link to="/band">Band</Link></li>
         </ul>
 
 
