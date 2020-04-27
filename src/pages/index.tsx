@@ -4,19 +4,10 @@ import { Link, graphql } from 'gatsby'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
-import Img, { FluidObject } from 'gatsby-image'
+import Img from 'gatsby-image'
+import { FluidImageQuery } from '../types.ts'
 
-interface IndexProps {
-  data: {
-    file: {
-      childImageSharp: {
-        fluid: FluidObject
-      }
-    }
-  }
-}
-
-const IndexPage = ({data: {file}}: IndexProps) => (
+const IndexPage = ({data: {file}}: FluidImageQuery) => (
   <IndexLayout>
     <Page>
       <Container>

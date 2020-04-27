@@ -6,19 +6,10 @@ import Container from '../components/Container'
 import IndexLayout from '../layouts'
 import Img, { FixedObject } from "gatsby-image";
 import { graphql } from 'gatsby';
+import { FixedImageQuery } from '../types.ts';
 
 interface HeadingProps {
   imageSrc: FixedObject
-}
-
-interface ResumeProps {
-  data: {
-    file: {
-      childImageSharp: {
-        fixed: FixedObject
-      }
-    }
-  }
 }
 
 const Heading = ({imageSrc}: HeadingProps) => (
@@ -215,7 +206,7 @@ const Education = () => (
 
 
 
-const Resume = ({data}: ResumeProps) => (
+const Resume = ({data}: FixedImageQuery) => (
     <IndexLayout>
         <Page>
             <Container>
