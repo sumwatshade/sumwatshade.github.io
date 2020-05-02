@@ -51,7 +51,6 @@ const Toggle = styled.div`
   display: none;
   height: 100%;
   cursor: pointer;
-  padding: 0 10vw;
   align-self: flex-end;
 
   @media (max-width: 768px) {
@@ -78,7 +77,7 @@ const Navbox = styled.div<NavBoxDiv>`
     padding-top: 10vh;
     background-color: #fff;
     transition: all 0.3s ease-in;
-    top: 8vh;
+    top: 60px;
     left: ${(props) => (props.open ? '-100%' : '0')};
   }
 `;

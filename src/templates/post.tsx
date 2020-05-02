@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
 import styled from '@emotion/styled';
 import Page from '../components/Page';
 import Container from '../components/Container';
 import IndexLayout from '../layouts';
-import { colors } from '../styles/variables';
-
+import { colors, breakpoints } from '../styles/variables';
+import NavLink from '../components/NavLink';
 
 interface PostTemplateProps {
   data: {
@@ -31,11 +31,27 @@ interface PostTemplateProps {
   }
 }
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   padding: 0.5em;
   max-width: 300px;
   text-align: center;
   border: 1px solid ${colors.brand};
+  color: ${colors.brand};
+
+  :hover {
+    color: goldenrod;
+    border: 1px solid goldenrod;
+    ::after {
+      width: 0%;
+    }
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    padding: 0.5em;
+    font-size: 1rem;
+    z-index: 0;
+    color: ${colors.brand}
+  }
 `;
 
 const StyledContainer = styled(Container)`
