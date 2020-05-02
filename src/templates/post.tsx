@@ -24,7 +24,8 @@ interface PostTemplateProps {
       html: string
       excerpt: string
       frontmatter: {
-        title: string
+        title: string,
+        date: string
       }
     }
   }
@@ -42,21 +43,25 @@ const StyledContainer = styled(Container)`
   flex-direction: column;
 `;
 
-const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => (
-  <IndexLayout>
-    <Page>
-      <StyledContainer>
-        <StyledLink to="/blog">Return to main blog page</StyledLink>
-        <div>
+const PostTemplate: React.FC<PostTemplateProps> = ({ data }) => {
+  const date = new Date(data.markdownRemark.frontmatter.date);
+  return (
+    <IndexLayout>
+      <Page>
+        <StyledContainer>
+          <StyledLink to="/blog">Return to main blog page</StyledLink>
           <h1>{data.markdownRemark.frontmatter.title}</h1>
-          {/* eslint-disable-next-line react/no-danger */}
-          <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-        </div>
-        <StyledLink to="/blog" style={{ alignSelf: 'flex-end' }}>Return to main blog page</StyledLink>
-      </StyledContainer>
-    </Page>
-  </IndexLayout>
-);
+          <h3>{date.toDateString()}</h3>
+          <div>
+            {/* eslint-disable-next-line react/no-danger */}
+            <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+          </div>
+          <StyledLink to="/blog" style={{ alignSelf: 'flex-end' }}>Return to main blog page</StyledLink>
+        </StyledContainer>
+      </Page>
+    </IndexLayout>
+  );
+};
 
 export default PostTemplate;
 
@@ -77,6 +82,7 @@ export const query = graphql`
       excerpt
       frontmatter {
         title
+        date
       }
     }
   }

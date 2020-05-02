@@ -40,9 +40,16 @@ const Blog = ({ data } : BlogProps) => {
             learning algorithms to social movements, to designing video games!
           </p>
           <BlogList>
-            {posts.map(({ node }: BlogPostNode) => (
-              <BlogListItem data={node} />
-            ))}
+            {posts
+              .sort((a: BlogPostNode, b: BlogPostNode): number => {
+                const dateA = new Date(a.node.frontmatter.date);
+                const dateB = new Date(b.node.frontmatter.date);
+
+                return dateB.getTime() - dateA.getTime();
+              })
+              .map(({ node }: BlogPostNode) => (
+                <BlogListItem data={node} />
+              ))}
           </BlogList>
         </Container>
       </Page>
