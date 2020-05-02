@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Jamey and Luke Made a Game!"
+date: "2017-12-25"
 ---
 ### Welcome to the release of "Style Boyz: The Game"!
 

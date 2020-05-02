@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Algorithms Review Cheat Sheet"
+date: "2017-05-13"
 ---
 ## Basic Concepts
 ### Complexity

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "A Comment on Net Neutrality"
+date: "2017-07-22"
 ---
 With ISPs using a [great deal of money](https://www.theverge.com/2017/3/29/15100620/congress-fcc-isp-web-browsing-privacy-fire-sale) to lobby against Neutrality, I thought that I should do my part to help shed some light on the subject.
 

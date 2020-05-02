@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Independence Day Update for 'Style Boyz: The Game'!"
+date: "2018-07-04"
 ---
 ### Welcome to the release of "Style Boyz: The Game"!
 
@@ -8,8 +9,6 @@ After months of really lazy and laid-back development, (mostly) Jamey and I have
 together a new level for everyone! We want your feedback, and hope to be making some
 awesome boss fights with better jokes now that the groundwork has been completed in
 getting the game moving.
-
-### Creaters Video
 
 ### Installing the game
 

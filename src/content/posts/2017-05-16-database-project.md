@@ -1,6 +1,7 @@
 ---
 layout: post
 title: My Database Project
+date: "2017-05-16"
 ---
 Through my last semester at RIT, I encountered my first long-term team-based coding project.
 Although my skills at writing algorithms and solutions were strong by this point, my team
