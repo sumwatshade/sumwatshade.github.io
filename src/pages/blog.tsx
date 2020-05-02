@@ -6,22 +6,16 @@ import Page from '../components/Page';
 import Container from '../components/Container';
 import IndexLayout from '../layouts';
 import BlogListItem from '../components/BlogListItem';
+import { BlogPostData } from '../types.ts/index';
 
-interface PostData {
-  node: {
-    fields: {
-      slug: string
-    },
-    frontmatter: {
-      title: string
-    }
-  }
+interface BlogPostNode {
+  node: BlogPostData
 }
 
 interface BlogProps {
   data: {
     allMarkdownRemark: {
-      edges: Array<PostData>
+      edges: Array<BlogPostNode>
     }
   }
 }
@@ -46,8 +40,8 @@ const Blog = ({ data } : BlogProps) => {
             learning algorithms to social movements, to designing video games!
           </p>
           <BlogList>
-            {posts.map(({ node: { fields, frontmatter } }:PostData) => (
-              <BlogListItem to={fields.slug} title={frontmatter.title} />
+            {posts.map(({ node }: BlogPostNode) => (
+              <BlogListItem data={node} />
             ))}
           </BlogList>
         </Container>
@@ -68,6 +62,7 @@ export const query = graphql`
           }
           frontmatter {
             title
+            date
           }
         }
       }

@@ -20,3 +20,13 @@ export interface FixedImageQuery {
         }
     }
 }
+
+export interface BlogPostData {
+    fields: {
+    slug: string
+    },
+    frontmatter: {
+    title: string,
+    date: string
+    }
+}

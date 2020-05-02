@@ -2,12 +2,12 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 
 import { Link } from 'gatsby';
-import { colors } from '../styles/variables';
+import { colors, breakpoints } from '../styles/variables';
 import { getEmSize } from '../styles/mixins';
+import { BlogPostData } from '../types.ts/index';
 
 interface BlogListItemProps {
-    title: string,
-    to: string
+    data: BlogPostData
 }
 
 const ListItemContainer = styled.li`
@@ -19,23 +19,41 @@ const ListItemContainer = styled.li`
 
 const StyledLink = styled(Link)`
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
     padding: 1em;
+
+    @media (max-width: ${breakpoints.md}px) {
+      flex-direction: column-reverse;
+    }
+`;
+
+const StyledTitle = styled.div``;
+
+const StyledDate = styled.div`
+  color: ${colors.gray.calm};
+  align-self
 `;
 
 const BlogListItem: React.FC<BlogListItemProps> = ({
-  title,
-  to,
-}) => (
-  <li>
+  data,
+}) => {
+  const { frontmatter: { title, date }, fields: { slug } } = data;
+  const dateObj: Date = new Date(date);
 
-    <ListItemContainer>
-      <StyledLink to={to}>
-        {title}
-      </StyledLink>
-    </ListItemContainer>
-  </li>
-);
+  return (
+    <li>
+
+      <ListItemContainer>
+        <StyledLink to={slug}>
+          <StyledTitle>{title}</StyledTitle>
+          <StyledDate>{dateObj.toLocaleDateString()}</StyledDate>
+        </StyledLink>
+      </ListItemContainer>
+    </li>
+  );
+};
 
 export default BlogListItem;
