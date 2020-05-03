@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: 'lshadler.github.io',
     description: 'A personal website for Lucas Shadler',
-    keywords: 'gatsbyjs, gatsby, javascript, resume, portfolio',
+    keywords: 'gatsbyjs, gatsby, typescript, resume, portfolio',
     siteUrl: 'https://lshadler.github.io/',
     author: {
       name: 'Lucas Shadler',
