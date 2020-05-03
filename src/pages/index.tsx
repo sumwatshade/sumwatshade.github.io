@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import styled from '@emotion/styled';
 import Page from '../components/Page';
@@ -77,6 +77,24 @@ const GithubProjects = styled.div`
   width: 100%;
 `;
 
+const ContactSpan = styled.a`
+  :hover {
+    color: cyan;
+  }
+  color: #22da26;
+  text-decoration: underline;
+`;
+
+const ContactSection = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid ${colors.brand};
+  border-radius: 5px;
+  padding: 1em;
+`;
+
+const ContactLink = ContactSpan.withComponent(Link);
 
 const IndexPage = () => (
   <IndexLayout>
@@ -84,12 +102,19 @@ const IndexPage = () => (
       <Container>
         <Window>
           <Terminal>
-            <Command>Welcome to 2.0 of my personal site!</Command>
             <Command>
               My name is Luke Shadler. I am a Full-Stack Software Engineer
               based in San Diego, California.
             </Command>
-            <Command>Let&apos;s go make something cool!</Command>
+            <Command>
+              Want more detailed experience data?&nbsp;
+              <ContactLink to="/resume">Click here to view my resume</ContactLink>
+            </Command>
+            {' '}
+            <Command>
+              Let&apos;s make something cool together!&nbsp;
+              <ContactSpan href="#contact">Click here to scroll to contact!</ContactSpan>
+            </Command>
           </Terminal>
         </Window>
         <SectionHeader>Github Projects</SectionHeader>
@@ -104,6 +129,19 @@ const IndexPage = () => (
           <GithubProjectViewer href="https://api.github.com/repos/lshadler/results-website" />
           <GithubProjectViewer href="https://api.github.com/repos/lshadler/NGC6418" />
         </GithubProjects>
+        <SectionHeader id="contact">Contact</SectionHeader>
+        <ContactSection>
+          <div>Name: Lucas Shadler</div>
+          <div>Phone: (585)766-7886</div>
+          <div>
+            E-Mail:&nbsp;
+            <a href="mailto:lshadler13@gmail.com">lshadler13@gmail.com</a>
+          </div>
+          <div>
+            Github:&nbsp;
+            <a href="https://github.com/lshadler" target="_blank" rel="noopener noreferrer">lshadler</a>
+          </div>
+        </ContactSection>
       </Container>
     </Page>
   </IndexLayout>
