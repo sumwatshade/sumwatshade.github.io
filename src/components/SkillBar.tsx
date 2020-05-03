@@ -16,6 +16,11 @@ const Container = styled.div`
 
 const Bar = styled.div`
     background-color: ${colors.brand};
+    transition: all 200ms ease-in;
+
+    :hover {
+      background-color: goldenrod;
+    }
 `;
 
 const Percentage = styled.span`

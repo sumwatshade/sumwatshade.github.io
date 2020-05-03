@@ -1,5 +1,5 @@
 import {
-  dimensions, fonts, colors, breakpoints,
+  dimensions, colors, breakpoints,
 } from './variables';
 import { getEmSize } from './mixins';
 
@@ -23,11 +23,8 @@ export default `
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: ${fonts.sansSerif};
     color: ${colors.black};
     background-color: ${colors.ui.whisper};
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
   }
 
   a {
@@ -36,7 +33,6 @@ export default `
 
     &:hover,
     &:focus {
-      text-decoration: underline;
     }
   }
 
@@ -89,7 +85,6 @@ export default `
     margin-top: 1.414rem;
     margin-bottom: .5rem;
     color: ${colors.black};
-    font-weight: 600;
     line-height: ${dimensions.lineHeight.heading};
     text-rendering: optimizeLegibility;
   }

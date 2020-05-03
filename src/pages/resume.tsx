@@ -142,7 +142,7 @@ const AcademicExperience = () => (
       </p>
     </div>
     <div>
-      <h5><b>Optimation of MINERvA Proton Selection Algorithm / FermiLab, IL</b></h5>
+      <h5><b>Optimization of MINERvA Proton Selection Algorithm / FermiLab, IL</b></h5>
       <h6>Fall 2014 - Summer 2015</h6>
       <p>
         <ul>
@@ -214,7 +214,7 @@ const Education = () => (
           <li>
             <b>Mathematics:</b>
             {' '}
-            Multivariable Calculus, Probability and Statistics, Differential
+            Multi-variable Calculus, Probability and Statistics, Differential
             Equations, Advanced Linear Algebra, Numerical Linear Algebra
           </li>
           <li>

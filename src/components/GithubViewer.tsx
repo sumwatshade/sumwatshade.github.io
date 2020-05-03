@@ -29,8 +29,37 @@ const GithubViewerContainer = styled.div`
     }
 `;
 
-const GithubRepoName = styled.a`
+const GithubRepoName = styled.span`
     font-size: 1.2rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color: ${colors.brand};
+    text-overflow: scroll;
+    display: inline-block;
+    transition: all 200ms ease-in;
+    position: relative;
+
+    :after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0%;
+      content: ".";
+      color: transparent;
+      background: goldenrod;
+      height: 1px;
+      transition: all 0.4s ease-in;
+    }
+
+    :hover {
+      color: goldenrod;
+      ::after {
+        width: 100%;
+      }
+    }
 `;
 
 const GithubDescription = styled.div`
@@ -42,9 +71,10 @@ const GithubDescription = styled.div`
 const GithubLanguage = styled.div`
     align-self: flex-end;
 `;
-const GithubPagesLink = styled.a`
+const GithubPagesLink = styled(GithubRepoName)`
+    font-size: 1rem;
     align-self: flex-end;
-`;
+`.withComponent('a');
 
 interface GithubProjectViewerProps {
     href: string
@@ -73,9 +103,9 @@ const GithubProjectViewer: React.FC<GithubProjectViewerProps> = ({ href }) => {
 
   return data && data.full_name ? (
     <GithubViewerContainer>
-      <GithubRepoName href={html_url} target="_blank">{full_name}</GithubRepoName>
+      <a href={html_url} target="_blank" rel="noopener noreferrer"><GithubRepoName>{full_name}</GithubRepoName></a>
       <GithubDescription>{description}</GithubDescription>
-      {homepage && <GithubPagesLink href={homepage}>View on Github Pages</GithubPagesLink>}
+      {homepage && <GithubPagesLink href={html_url}>View on Github Pages</GithubPagesLink>}
       <GithubLanguage>{language}</GithubLanguage>
     </GithubViewerContainer>
   ) : (<></>);
