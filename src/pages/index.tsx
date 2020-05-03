@@ -4,6 +4,8 @@ import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import Page from '../components/Page';
 import IndexLayout from '../layouts';
+import GithubProjectViewer from '../components/GithubViewer';
+import { colors } from '../styles/variables';
 
 const Container = styled.div`
   display: flex;
@@ -19,7 +21,7 @@ const Window = styled.div`
   overflow: hidden;
   position: relative;
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
   
   &:before {
     content: ' ';
@@ -61,6 +63,20 @@ const Command = styled.p`
   }
 `;
 
+const SectionHeader = styled.h1`
+  align-self: flex-start;
+  color: ${colors.brand};
+  margin: 1.5rem 0;
+`;
+
+const GithubProjects = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+`;
+
 
 const IndexPage = () => (
   <IndexLayout>
@@ -76,6 +92,18 @@ const IndexPage = () => (
             <Command>Let&apos;s go make something cool!</Command>
           </Terminal>
         </Window>
+        <SectionHeader>Github Projects</SectionHeader>
+        <GithubProjects>
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/webpack-demo" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/wol-deck-generator" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/lshadler.github.io" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/roost" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/covid-19" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/dev-config" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/indecision-plaza" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/results-website" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/NGC6418" />
+        </GithubProjects>
       </Container>
     </Page>
   </IndexLayout>
