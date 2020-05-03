@@ -1,25 +1,23 @@
 /* eslint-disable camelcase */
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { colors, breakpoints } from '../styles/variables';
-
-interface GithubApiData {
-    html_url: string,
-    full_name: string,
-    language: string,
-    description: string,
-    homepage: string
-}
-
+import { GithubRepoInfo } from '../types.ts/index';
 
 const GithubViewerContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: all 200ms ease-in;
+    background-color: #789C98;
 
-    border: 1px solid ${colors.brand};
+    :hover {
+      color: ${({ color }) => color};
+    }
+    
+    border: 1.5px solid ${({ color }) => color};
     border-radius: 5px;
-    color: ${colors.brand};
+    color: ${colors.white};
     margin: 0.5em 0;
     padding: 1em;
     min-width: 30%;
@@ -27,18 +25,20 @@ const GithubViewerContainer = styled.div`
     @media(max-width: ${breakpoints.md}px) {
         min-width: 100%;
     }
+
+    a {
+      color: inherit;
+    }
 `;
 
 const GithubRepoName = styled.span`
     font-size: 1.2rem;
-
+    color: inherit;
     overflow: hidden;
     text-overflow: ellipsis;
     text-decoration: none;
-    color: ${colors.brand};
     text-overflow: scroll;
     display: inline-block;
-    transition: all 200ms ease-in;
     position: relative;
 
     :after {
@@ -49,13 +49,12 @@ const GithubRepoName = styled.span`
       width: 0%;
       content: ".";
       color: transparent;
-      background: goldenrod;
+      background: ${({ color }) => color};
       height: 1px;
-      transition: all 0.4s ease-in;
     }
 
     :hover {
-      color: goldenrod;
+      color: ${({ color }) => color};
       ::after {
         width: 100%;
       }
@@ -65,7 +64,7 @@ const GithubRepoName = styled.span`
 const GithubDescription = styled.div`
     align-self: center;
     padding: 0 1.5rem;
-    color: ${colors.gray.calm};
+    color: ${colors.ui.light};
 `;
 
 const GithubLanguage = styled.div`
@@ -77,36 +76,33 @@ const GithubPagesLink = styled(GithubRepoName)`
 `.withComponent('a');
 
 interface GithubProjectViewerProps {
-    href: string
+  repo: GithubRepoInfo
 }
 
-const GithubProjectViewer: React.FC<GithubProjectViewerProps> = ({ href }) => {
-  const [data, setData] = useState<GithubApiData>({
-    html_url: '',
-    description: '',
-    full_name: '',
-    language: '',
-    homepage: '',
-  });
-
+const GithubProjectViewer: React.FC<GithubProjectViewerProps> = ({ repo }) => {
   const {
-    full_name, language, description, html_url, homepage,
-  } = data;
+    homepageUrl, url, primaryLanguage, name, description,
+  } = repo;
 
-  useEffect(() => {
-    fetch(href, {
-      mode: 'cors',
-    }).then((r) => r.json()).then((res) => {
-      setData(res);
-    });
-  }, []);
-
-  return data && data.full_name ? (
-    <GithubViewerContainer>
-      <a href={html_url} target="_blank" rel="noopener noreferrer"><GithubRepoName>{full_name}</GithubRepoName></a>
+  return repo && repo.name ? (
+    <GithubViewerContainer color={primaryLanguage.color}>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <GithubRepoName color={primaryLanguage.color}>{name}</GithubRepoName>
+      </a>
       <GithubDescription>{description}</GithubDescription>
-      {homepage && <GithubPagesLink href={homepage}>View on Github Pages</GithubPagesLink>}
-      <GithubLanguage>{language}</GithubLanguage>
+      {homepageUrl && (
+      <GithubPagesLink
+        color={primaryLanguage.color}
+        href={homepageUrl}
+      >
+        View on Github Pages
+      </GithubPagesLink>
+      )}
+      <GithubLanguage>{primaryLanguage.name}</GithubLanguage>
     </GithubViewerContainer>
   ) : (<></>);
 };

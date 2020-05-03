@@ -10,6 +10,7 @@ export const colors = {
     bright: '#e0d6eb',
     light: '#f5f3f7',
     whisper: '#fbfafc',
+    medium: '#C2C0C4',
   },
   code: '#fcf6f0',
   gray: {

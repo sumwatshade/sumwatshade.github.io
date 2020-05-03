@@ -30,3 +30,14 @@ export interface BlogPostData {
     date: string
     }
 }
+
+export interface GithubRepoInfo {
+    description: string,
+    homepageUrl: string,
+    url: string,
+    name: string,
+    primaryLanguage: {
+        color: string,
+        name: string,
+    }
+}

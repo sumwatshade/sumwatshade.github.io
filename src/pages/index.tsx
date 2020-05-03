@@ -6,6 +6,7 @@ import Page from '../components/Page';
 import IndexLayout from '../layouts';
 import GithubProjectViewer from '../components/GithubViewer';
 import { colors } from '../styles/variables';
+import { GithubRepoInfo } from '../types.ts/index';
 
 const Container = styled.div`
   display: flex;
@@ -96,7 +97,22 @@ const ContactSection = styled.div`
 
 const ContactLink = ContactSpan.withComponent(Link);
 
-const IndexPage = () => (
+interface IndexProps {
+  data: {
+    github: {
+      user: {
+        site: GithubRepoInfo,
+        covid: GithubRepoInfo,
+        webpackDemo: GithubRepoInfo,
+        roost: GithubRepoInfo,
+        wolDeckGenerator: GithubRepoInfo,
+        indecisionPlaza: GithubRepoInfo,
+      }
+    }
+  }
+}
+
+const IndexPage: React.FC<IndexProps> = ({ data }) => (
   <IndexLayout>
     <Page>
       <Container>
@@ -119,15 +135,12 @@ const IndexPage = () => (
         </Window>
         <SectionHeader>Github Projects</SectionHeader>
         <GithubProjects>
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/webpack-demo" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/roost" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/covid-19" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/lshadler.github.io" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/wol-deck-generator" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/indecision-plaza" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/results-website" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/NGC6418" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/dev-config" />
+          <GithubProjectViewer repo={data.github.user.webpackDemo} />
+          <GithubProjectViewer repo={data.github.user.site} />
+          <GithubProjectViewer repo={data.github.user.roost} />
+          <GithubProjectViewer repo={data.github.user.wolDeckGenerator} />
+          <GithubProjectViewer repo={data.github.user.covid} />
+          <GithubProjectViewer repo={data.github.user.indecisionPlaza} />
         </GithubProjects>
         <SectionHeader id="contact">Contact</SectionHeader>
         <ContactSection>
@@ -150,17 +163,39 @@ const IndexPage = () => (
 export default IndexPage;
 
 export const query = graphql`
-  query {
-    file(relativePath: { eq: "Luke_portrait_01.jpg" }) {
-      childImageSharp {
-          # Specify the image processing specifications right in the query.
-          # Makes it trivial to update as your page's design changes.
-          fluid(
-            srcSetBreakpoints: [200, 400, 600, 800, 1200]
-          ) {
-            ...GatsbyImageSharpFluid
-          }
+fragment repoInfo on GitHub_Repository{
+  description
+  homepageUrl
+  url
+  name
+  primaryLanguage {
+    color
+    name
+  }
+}
+
+query IndexQuery {
+  github {
+    user(login: "lshadler") {
+      site: repository(name: "lshadler.github.io") {
+        ...repoInfo
+      }
+      covid: repository(name: "covid-19") {
+        ...repoInfo
+      }
+      webpackDemo: repository(name: "webpack-demo") {
+        ...repoInfo
+      }
+      roost: repository(name: "roost") {
+        ...repoInfo
+      }
+      wolDeckGenerator: repository(name: "wol-deck-generator") {
+        ...repoInfo
+      }
+      indecisionPlaza: repository(name: "indecision-plaza") {
+        ...repoInfo
       }
     }
   }
+}
 `;
