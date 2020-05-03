@@ -1,17 +1,7 @@
 {
   "extends": [
-    "config:base"
-  ],
-  "minor": {
-    "automerge": true
-  },
-  "patch": {
-    "automerge": true
-  },
-  "pin": {
-    "automerge": true
-  },
-  "lockFileMaintenance": {
-    "automerge": true
-  }
+    "config:base",
+    ":reviewer(lshadler)",
+    ":automergeMinor"
+  ]
 }
