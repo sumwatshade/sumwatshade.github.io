@@ -50,6 +50,7 @@ node_modules/
 # misc
 .serverless/
 .eslintcache
+github-auth.sh
 
 # lock files
 yarn.lock
