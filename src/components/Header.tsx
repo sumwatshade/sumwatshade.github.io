@@ -131,10 +131,10 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         <Toggle
           onClick={() => setNavbarOpen(!navbarOpen)}
         >
-          {navbarOpen ? <Hamburger open /> : <Hamburger />}
+          {navbarOpen ? <Hamburger open /> : <Hamburger open={false} />}
         </Toggle>
         {navbarOpen ? (
-          <Navbox>
+          <Navbox open={false}>
             <NavBarLinks />
           </Navbox>
         ) : (

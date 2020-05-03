@@ -75,10 +75,10 @@ const GithubProjectViewer: React.FC<GithubProjectViewerProps> = ({ href }) => {
     <GithubViewerContainer>
       <GithubRepoName href={html_url} target="_blank">{full_name}</GithubRepoName>
       <GithubDescription>{description}</GithubDescription>
-      {homepage && <GithubPagesLink to={homepage}>View on Github Pages</GithubPagesLink>}
+      {homepage && <GithubPagesLink href={homepage}>View on Github Pages</GithubPagesLink>}
       <GithubLanguage>{language}</GithubLanguage>
     </GithubViewerContainer>
-  ) : '';
+  ) : (<></>);
 };
 
 export default GithubProjectViewer;
