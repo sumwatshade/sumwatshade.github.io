@@ -113,21 +113,21 @@ const IndexPage = () => (
             {' '}
             <Command>
               Let&apos;s make something cool together!&nbsp;
-              <ContactSpan href="#contact">Click here to scroll to contact!</ContactSpan>
+              <ContactSpan href="#contact">Click here to view contact information</ContactSpan>
             </Command>
           </Terminal>
         </Window>
         <SectionHeader>Github Projects</SectionHeader>
         <GithubProjects>
           <GithubProjectViewer href="https://api.github.com/repos/lshadler/webpack-demo" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/wol-deck-generator" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/lshadler.github.io" />
           <GithubProjectViewer href="https://api.github.com/repos/lshadler/roost" />
           <GithubProjectViewer href="https://api.github.com/repos/lshadler/covid-19" />
-          <GithubProjectViewer href="https://api.github.com/repos/lshadler/dev-config" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/lshadler.github.io" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/wol-deck-generator" />
           <GithubProjectViewer href="https://api.github.com/repos/lshadler/indecision-plaza" />
           <GithubProjectViewer href="https://api.github.com/repos/lshadler/results-website" />
           <GithubProjectViewer href="https://api.github.com/repos/lshadler/NGC6418" />
+          <GithubProjectViewer href="https://api.github.com/repos/lshadler/dev-config" />
         </GithubProjects>
         <SectionHeader id="contact">Contact</SectionHeader>
         <ContactSection>
