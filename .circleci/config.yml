@@ -42,7 +42,7 @@ jobs:
           command: 'echo \"role assumption complete\"'
       - run:
           name: Deploy to server
-          command: 'echo \"deploy succeeded\"'
+          command: yarn deploy
 
   workflows:
   version: 2
