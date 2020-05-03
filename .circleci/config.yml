@@ -27,3 +27,32 @@ jobs:
       - run:
           name: Build
           command: yarn build
+  deploy:
+    docker:
+      - image: circleci/node:dubnium
+    working_directory: ~/gatsby-site
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "yarn.lock" }}
+            - v1-npm-deps-
+      - run:
+          name: Assume Github Role
+          command: 'echo \"role assumption complete\"'
+      - run:
+          name: Deploy to server
+          command: 'echo \"deploy succeeded\"'
+
+  workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - deploy:
+        requires:
+          - build
+        filters:
+          branches:
+            only:
+              - develop
