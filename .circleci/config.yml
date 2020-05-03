@@ -39,7 +39,7 @@ jobs:
             - v1-npm-deps-
       - run:
           name: Assume Github Role
-          command: 'echo \"role assumption complete\"'
+          command: 'git config --global user.email "lshadler13@gmail.com"'
       - run:
           name: Deploy to server
           command: yarn deploy
