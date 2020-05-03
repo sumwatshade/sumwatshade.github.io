@@ -19,14 +19,68 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: Build
+          command: yarn build
+  lint:
+    docker:
+      - image: circleci/node:dubnium
+    working_directory: ~/gatsby-site
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "yarn.lock" }}
+            - v1-npm-deps-
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          key: v1-npm-deps-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
           name: Lint
           command: yarn lint
+  type-check:
+    docker:
+      - image: circleci/node:dubnium
+    working_directory: ~/gatsby-site
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "yarn.lock" }}
+            - v1-npm-deps-
+      - run:
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          key: v1-npm-deps-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
       - run:
           name: Type Check
           command: yarn type-check
+  test:
+    docker:
+      - image: circleci/node:dubnium
+    working_directory: ~/gatsby-site
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-deps-{{ checksum "yarn.lock" }}
+            - v1-npm-deps-
       - run:
-          name: Build
-          command: yarn build
+          name: Install Dependencies
+          command: yarn
+      - save_cache:
+          key: v1-npm-deps-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: Jest Testing
+          command: yarn test      
   deploy:
     docker:
       - image: circleci/node:dubnium
@@ -53,9 +107,33 @@ workflows:
             branches:
               ignore:
                 - master
+      - type-check:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - master
+      - test:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - master
+      - lint:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore:
+                - master
       - deploy:
           requires:
             - build
+            - test
+            - type-check
+            - lint
           filters:
             branches:
               only:
