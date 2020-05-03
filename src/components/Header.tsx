@@ -43,6 +43,7 @@ const HomepageLink = styled(Link)`
 
   &:hover,
   &:focus {
+    color: goldenrod;
     text-decoration: none;
   }
 `;
