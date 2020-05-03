@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GithubViewer renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="css-77fefn"
+    color="green"
+  >
+    <a
+      href="test"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <span
+        class="css-16dgezj"
+        color="green"
+      >
+        lshadler.github.io
+      </span>
+    </a>
+    <div
+      class="css-1klpc19"
+    >
+      a site
+    </div>
+    <a
+      class="css-y44j1"
+      color="green"
+      href="test-homepage"
+    >
+      View on Github Pages
+    </a>
+    <div
+      class="css-uk1q65"
+    >
+      java
+    </div>
+  </div>
+</DocumentFragment>
+`;

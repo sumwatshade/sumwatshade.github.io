@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogListItem renders correctly 1`] = `
+<DocumentFragment>
+  <li />
+  <li
+    class="css-1tse97z"
+  >
+    <a
+      class="css-1aqrz0m"
+      href="blog-post-one"
+    >
+      <div
+        class="css-0"
+      >
+        Blog Post One
+      </div>
+      <div
+        class="css-fpqub2"
+      >
+        11/11/1995
+      </div>
+    </a>
+  </li>
+</DocumentFragment>
+`;

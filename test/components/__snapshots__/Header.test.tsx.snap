@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<DocumentFragment>
+  <header
+    class="css-bb20tn"
+  >
+    <div
+      class="css-1a7tmcj"
+    >
+      <a
+        class="css-1il6jiw"
+        href="/"
+      >
+        test title
+      </a>
+      <div
+        class="css-99wob1"
+      >
+        <div
+          class="css-1gxg4gp"
+        />
+      </div>
+      <div
+        class="css-1x65t9n"
+        open=""
+      >
+        <a
+          class="css-176sahz"
+          href="/resume"
+        >
+          Resume
+        </a>
+        <a
+          class="css-176sahz"
+          href="/blog"
+        >
+          Blog
+        </a>
+        <a
+          class="css-176sahz"
+          href="/band"
+        >
+          Band
+        </a>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;

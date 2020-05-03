@@ -23,11 +23,11 @@ export interface FixedImageQuery {
 
 export interface BlogPostData {
     fields: {
-    slug: string
+        slug: string
     },
     frontmatter: {
-    title: string,
-    date: string
+        title: string,
+        date: string
     }
 }
 
