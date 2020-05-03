@@ -2,7 +2,6 @@
 
 exports[`BlogListItem renders correctly 1`] = `
 <DocumentFragment>
-  <li />
   <li
     class="css-1tse97z"
   >

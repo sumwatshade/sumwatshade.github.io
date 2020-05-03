@@ -44,15 +44,12 @@ const BlogListItem: React.FC<BlogListItemProps> = ({
   const dateObj: Date = new Date(date);
 
   return (
-    <li>
-
-      <ListItemContainer>
-        <StyledLink to={slug}>
-          <StyledTitle>{title}</StyledTitle>
-          <StyledDate>{dateObj.toLocaleDateString()}</StyledDate>
-        </StyledLink>
-      </ListItemContainer>
-    </li>
+    <ListItemContainer>
+      <StyledLink to={slug}>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledDate>{dateObj.toLocaleDateString()}</StyledDate>
+      </StyledLink>
+    </ListItemContainer>
   );
 };
 
