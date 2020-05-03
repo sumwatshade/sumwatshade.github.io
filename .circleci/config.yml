@@ -39,7 +39,7 @@ jobs:
             - v1-npm-deps-
       - run:
           name: Assume Github Role
-          command: 'git config --global user.email "lshadler13@gmail.com"'
+          command: 'git config --global user.email "lshadler13@gmail.com" && git config --global user.name "lshadler"'
       - run:
           name: Deploy to server
           command: yarn deploy
