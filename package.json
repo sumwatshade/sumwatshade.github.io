@@ -60,7 +60,7 @@
     "typography-theme-grand-view": "0.16.19"
   },
   "devDependencies": {
-    "@testing-library/react": "10.1.0",
+    "@testing-library/react": "10.2.0",
     "@types/classnames": "2.2.10",
     "@types/jest": "25.2.3",
     "@types/node": "12.12.43",
