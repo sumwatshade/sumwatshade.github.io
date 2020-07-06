@@ -45,7 +45,7 @@
     "gatsby-transformer-json": "2.4.10",
     "gatsby-transformer-remark": "2.8.23",
     "gatsby-transformer-sharp": "2.5.10",
-    "modern-normalize": "0.6.0",
+    "modern-normalize": "0.7.0",
     "node-fetch": "2.6.0",
     "normalize.css": "8.0.1",
     "polished": "3.6.5",
