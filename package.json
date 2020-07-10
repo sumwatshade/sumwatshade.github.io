@@ -65,7 +65,7 @@
     "@types/jest": "25.2.3",
     "@types/node": "12.12.49",
     "@types/node-fetch": "2.5.7",
-    "@types/react": "16.9.41",
+    "@types/react": "16.9.42",
     "@types/react-dom": "16.9.8",
     "@types/react-helmet": "6.0.0",
     "@typescript-eslint/eslint-plugin": "2.34.0",
