@@ -55,7 +55,7 @@
     "react-dom": "16.13.1",
     "react-helmet": "6.1.0",
     "react-typography": "0.16.19",
-    "typescript": "3.9.6",
+    "typescript": "3.9.7",
     "typography": "0.16.19",
     "typography-theme-grand-view": "0.16.19"
   },
