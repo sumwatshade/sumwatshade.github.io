@@ -3,7 +3,7 @@
 exports[`GithubViewer renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="css-77fefn"
+    class="css-196mz4z"
     color="green"
   >
     <a
@@ -12,19 +12,19 @@ exports[`GithubViewer renders correctly 1`] = `
       target="_blank"
     >
       <span
-        class="css-16dgezj"
+        class="css-15zdi7v"
         color="green"
       >
         lshadler.github.io
       </span>
     </a>
     <div
-      class="css-1klpc19"
+      class="css-16dlxrf"
     >
       a site
     </div>
     <a
-      class="css-y44j1"
+      class="css-o84qlk"
       color="green"
       href="test-homepage"
     >

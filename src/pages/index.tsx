@@ -103,7 +103,7 @@ interface IndexProps {
         covid: GithubRepoInfo,
         webpackDemo: GithubRepoInfo,
         roost: GithubRepoInfo,
-        wolDeckGenerator: GithubRepoInfo,
+        forwardMomentum: GithubRepoInfo,
         indecisionPlaza: GithubRepoInfo,
       }
     }
@@ -140,7 +140,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           <GithubProjectViewer repo={data.github.user.webpackDemo} />
           <GithubProjectViewer repo={data.github.user.site} />
           <GithubProjectViewer repo={data.github.user.roost} />
-          <GithubProjectViewer repo={data.github.user.wolDeckGenerator} />
+          <GithubProjectViewer repo={data.github.user.forwardMomentum} />
           <GithubProjectViewer repo={data.github.user.covid} />
           <GithubProjectViewer repo={data.github.user.indecisionPlaza} />
         </GithubProjects>
@@ -197,7 +197,7 @@ query IndexQuery {
       roost: repository(name: "roost") {
         ...repoInfo
       }
-      wolDeckGenerator: repository(name: "wol-deck-generator") {
+      forwardMomentum: repository(name: "forward-momentum") {
         ...repoInfo
       }
       indecisionPlaza: repository(name: "indecision-plaza") {

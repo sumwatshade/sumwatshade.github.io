@@ -13,7 +13,7 @@ const GithubViewerContainer = styled.div`
   color: var(--textCard);
 
   :hover {
-    color: ${({ langColor }) => langColor};
+    color: ${({ color }) => color};
   }
 
   border: 1.5px solid ${({ color }) => color};
@@ -49,12 +49,12 @@ const GithubRepoName = styled.span`
     width: 0%;
     content: ".";
     color: transparent;
-    background: ${({ langColor }) => langColor};
+    background: ${({ color }) => color};
     height: 1px;
   }
 
   :hover {
-    color: ${({ langColor }) => langColor};
+    color: ${({ color }) => color};
     ::after {
       width: 100%;
     }
@@ -85,15 +85,15 @@ const GithubProjectViewer: React.FC<GithubProjectViewerProps> = ({ repo }) => {
   } = repo;
 
   return repo && repo.name ? (
-    <GithubViewerContainer langColor={primaryLanguage.color}>
+    <GithubViewerContainer color={primaryLanguage.color}>
       <a href={url} target="_blank" rel="noopener noreferrer">
-        <GithubRepoName langColor={primaryLanguage.color}>
+        <GithubRepoName color={primaryLanguage.color}>
           {name}
         </GithubRepoName>
       </a>
       <GithubDescription>{description}</GithubDescription>
       {homepageUrl && (
-        <GithubPagesLink langColor={primaryLanguage.color} href={homepageUrl}>
+        <GithubPagesLink color={primaryLanguage.color} href={homepageUrl}>
           View on Github Pages
         </GithubPagesLink>
       )}

@@ -3,7 +3,7 @@
 exports[`BlogListItem renders correctly 1`] = `
 <DocumentFragment>
   <li
-    class="css-1tse97z"
+    class="css-143dr4u"
   >
     <a
       class="css-1aqrz0m"
@@ -15,7 +15,7 @@ exports[`BlogListItem renders correctly 1`] = `
         Blog Post One
       </div>
       <div
-        class="css-fpqub2"
+        class="css-1e2fy0l"
       >
         11/11/1995
       </div>
