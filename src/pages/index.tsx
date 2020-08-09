@@ -5,7 +5,6 @@ import styled from '@emotion/styled';
 import Page from '../components/Page';
 import IndexLayout from '../layouts';
 import GithubProjectViewer from '../components/GithubViewer';
-import { colors } from '../styles/variables';
 import { GithubRepoInfo } from '../types.ts/index';
 
 const Container = styled.div`
@@ -23,7 +22,7 @@ const Window = styled.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  
+  max-width: 800px;
   &:before {
     content: ' ';
     display: block;
@@ -57,16 +56,15 @@ const Command = styled.p`
   white-space: wrap;
   overflow: wrap;
   animation: write-command 5s both;
-  
+  color: #22da26;
   &:before {
-    content: '$ ';
-    color: #22da26;
+    content: "$ ";
   }
 `;
 
 const SectionHeader = styled.h1`
   align-self: flex-start;
-  color: ${colors.brand};
+  color: var(--textTitle);
   margin: 1.5rem 0;
 `;
 
@@ -80,7 +78,7 @@ const GithubProjects = styled.div`
 
 const ContactSpan = styled.a`
   :hover {
-    color: cyan;
+    color: goldenrod;
   }
   color: #22da26;
   text-decoration: underline;
@@ -90,7 +88,7 @@ const ContactSection = styled.div`
   display: flex;
   flex-direction: column;
 
-  border: 1px solid ${colors.brand};
+  border: 1px solid var(--textNormal);
   border-radius: 5px;
   padding: 1em;
 `;
@@ -105,7 +103,7 @@ interface IndexProps {
         covid: GithubRepoInfo,
         webpackDemo: GithubRepoInfo,
         roost: GithubRepoInfo,
-        wolDeckGenerator: GithubRepoInfo,
+        forwardMomentum: GithubRepoInfo,
         indecisionPlaza: GithubRepoInfo,
       }
     }
@@ -119,17 +117,21 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
         <Window>
           <Terminal>
             <Command>
-              My name is Luke Shadler. I am a Full-Stack Software Engineer
-              based in San Diego, California.
+              My name is Luke Shadler. I am a Full-Stack Software Engineer based
+              in San Diego, California.
             </Command>
             <Command>
               Want more detailed experience data?&nbsp;
-              <ContactLink to="/resume">Click here to view my resume</ContactLink>
+              <ContactLink to="/resume">
+                Click here to view my resume
+              </ContactLink>
             </Command>
             {' '}
             <Command>
               Let&apos;s make something cool together!&nbsp;
-              <ContactSpan href="#contact">Click here to view contact information</ContactSpan>
+              <ContactSpan href="https://github.com/lshadler">
+                Let&apos;s connect on GitHub
+              </ContactSpan>
             </Command>
           </Terminal>
         </Window>
@@ -138,7 +140,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           <GithubProjectViewer repo={data.github.user.webpackDemo} />
           <GithubProjectViewer repo={data.github.user.site} />
           <GithubProjectViewer repo={data.github.user.roost} />
-          <GithubProjectViewer repo={data.github.user.wolDeckGenerator} />
+          <GithubProjectViewer repo={data.github.user.forwardMomentum} />
           <GithubProjectViewer repo={data.github.user.covid} />
           <GithubProjectViewer repo={data.github.user.indecisionPlaza} />
         </GithubProjects>
@@ -152,7 +154,13 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           </div>
           <div>
             Github:&nbsp;
-            <a href="https://github.com/lshadler" target="_blank" rel="noopener noreferrer">lshadler</a>
+            <a
+              href="https://github.com/lshadler"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              lshadler
+            </a>
           </div>
         </ContactSection>
       </Container>
@@ -189,7 +197,7 @@ query IndexQuery {
       roost: repository(name: "roost") {
         ...repoInfo
       }
-      wolDeckGenerator: repository(name: "wol-deck-generator") {
+      forwardMomentum: repository(name: "forward-momentum") {
         ...repoInfo
       }
       indecisionPlaza: repository(name: "indecision-plaza") {

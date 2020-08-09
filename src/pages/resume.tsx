@@ -9,7 +9,6 @@ import IndexLayout from '../layouts';
 import { FluidImageQuery } from '../types.ts';
 import SkillBar from '../components/SkillBar';
 
-import { colors } from '../styles/variables';
 import { getEmSize } from '../styles/mixins';
 
 const ResumePage = styled(Page)`
@@ -31,6 +30,7 @@ interface LeftContentProps {
     }
   }
 }
+
 const LeftContent = (data: LeftContentProps) => (
   <div>
     <Img fluid={data.file.childImageSharp.fluid} alt="Avatar" />
@@ -236,8 +236,8 @@ const Education = () => (
 
 
 const LeftPanel = styled.div`
-  background-color: ${colors.white};
-  border: ${getEmSize(1)}em solid ${colors.black};
+  background-color: var(--bg);
+  border: ${getEmSize(1)}em solid var(--textTitle);
   border-radius: 5px;
   padding: 2em;
   margin: 1em;

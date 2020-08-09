@@ -8,6 +8,7 @@ import '../styles/normalize';
 import Header from '../components/Header';
 import LayoutRoot from '../components/LayoutRoot';
 import LayoutMain from '../components/LayoutMain';
+import ThemeToggle from '../components/ThemeToggle';
 
 interface StaticQueryProps {
   site: {
@@ -41,7 +42,10 @@ const IndexLayout: React.FC = ({ children }) => (
           ]}
         />
         <Header title={data.site.siteMetadata.title} />
-        <LayoutMain>{children}</LayoutMain>
+        <LayoutMain>
+          {children}
+          <ThemeToggle />
+        </LayoutMain>
       </LayoutRoot>
     )}
   />

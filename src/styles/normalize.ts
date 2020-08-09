@@ -20,21 +20,44 @@ export default `
   }
 
   body {
+    --bg: ${colors.ui.whisper};
+    --textNormal: ${colors.black};
+    --textTitle: ${colors.brand};
+    --textLink: ${colors.brand};
+    --textCard: ${colors.white};
+    --cardBg: darkslategray;
+    --textLinkHover: goldenrod;
+    --hr: hsla(0, 0%, 0%, 0.2);
+
+    background-color: var(--bg);
+    color: var(--textNormal);
+    
     width: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    color: ${colors.black};
-    background-color: ${colors.ui.whisper};
-  }
 
-  a {
-    color: ${colors.brand};
-    text-decoration: none;
+    a {
+      color: var(--textLink);
+      text-decoration: none;
 
-    &:hover,
-    &:focus {
+      :hover {
+        color: var(--textLinkHover)
+      }
     }
   }
+
+  body.dark {
+    -webkit-font-smoothing: antialiased;
+
+    --bg: darkslategray;
+    --textNormal: ${colors.white};
+    --textTitle: ${colors.white};
+    --textLink: goldenrod;
+    --textLinkHover: ${colors.white};
+    --hr: hsla(0, 0%, 100%, 0.2);
+  }
+
+  
 
   img {
     max-width: 100%;
@@ -84,7 +107,7 @@ export default `
   h1, h2, h3, h4, h5, h6 {
     margin-top: 1.414rem;
     margin-bottom: .5rem;
-    color: ${colors.black};
+    color: var(--textTitle);
     line-height: ${dimensions.lineHeight.heading};
     text-rendering: optimizeLegibility;
   }
@@ -107,12 +130,13 @@ export default `
   }
 
   p {
+    color: var(--textNormal);
     margin-top: 0;
     margin-bottom: 1rem;
   }
 
   strong {
-    color: ${colors.black};
+     color: var(--textNormal);
   }
 
   ul,
