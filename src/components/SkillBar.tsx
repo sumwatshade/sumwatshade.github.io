@@ -7,7 +7,7 @@ import { getEmSize } from '../styles/mixins';
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
     background-color: ${colors.white};
     border: ${getEmSize(1)}em solid ${colors.black};
     border-radius: 5px;

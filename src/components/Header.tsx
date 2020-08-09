@@ -129,9 +129,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     <StyledHeader>
       <HeaderInner>
         <HomepageLink to="/">{title}</HomepageLink>
-        <Toggle
-          onClick={() => setNavbarOpen(!navbarOpen)}
-        >
+        <Toggle onClick={() => setNavbarOpen(!navbarOpen)}>
           {navbarOpen ? <Hamburger open /> : <Hamburger open={false} />}
         </Toggle>
         {navbarOpen ? (

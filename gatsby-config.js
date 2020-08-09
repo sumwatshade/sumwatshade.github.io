@@ -79,5 +79,8 @@ module.exports = {
         pathToConfigModule: 'typography',
       },
     },
+    {
+      resolve: 'gatsby-plugin-dark-mode',
+    },
   ],
 };

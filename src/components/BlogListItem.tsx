@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 
 import { Link } from 'gatsby';
-import { colors, breakpoints } from '../styles/variables';
+import { breakpoints } from '../styles/variables';
 import { getEmSize } from '../styles/mixins';
 import { BlogPostData } from '../types.ts/index';
 
@@ -12,7 +12,7 @@ interface BlogListItemProps {
 
 const ListItemContainer = styled.li`
     min-height: ${getEmSize(3)}em;
-    border: ${getEmSize(1)}em solid ${colors.brand};
+    border: ${getEmSize(1)}em solid var(--textTitle);
     margin: 1em;
 
 `;
@@ -33,8 +33,6 @@ const StyledLink = styled(Link)`
 const StyledTitle = styled.div``;
 
 const StyledDate = styled.div`
-  color: ${colors.gray.calm};
-  align-self
 `;
 
 const BlogListItem: React.FC<BlogListItemProps> = ({

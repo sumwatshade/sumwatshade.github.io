@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import Page from '../components/Page';
 import Container from '../components/Container';
 import IndexLayout from '../layouts';
-import { colors, breakpoints } from '../styles/variables';
+import { breakpoints } from '../styles/variables';
 import NavLink from '../components/NavLink';
 
 interface PostTemplateProps {
@@ -35,8 +35,8 @@ const StyledLink = styled(NavLink)`
   padding: 0.5em;
   max-width: 300px;
   text-align: center;
-  border: 1px solid ${colors.brand};
-  color: ${colors.brand};
+  border: 1px solid var(--textTitle);
+  color: var(--textNormal);
 
   :hover {
     color: goldenrod;
@@ -50,7 +50,7 @@ const StyledLink = styled(NavLink)`
     padding: 0.5em;
     font-size: 1rem;
     z-index: 0;
-    color: ${colors.brand}
+    color: var(--textNormal);
   }
 `;
 

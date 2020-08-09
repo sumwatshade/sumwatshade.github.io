@@ -1,70 +1,69 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import styled from '@emotion/styled';
-import { colors, breakpoints } from '../styles/variables';
+import { breakpoints } from '../styles/variables';
 import { GithubRepoInfo } from '../types.ts/index';
 
 const GithubViewerContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 200ms ease-in;
-    background-color: #789C98;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 200ms ease-in;
+  background-color: var(--bg);
 
-    :hover {
-      color: ${({ color }) => color};
-    }
-    
-    border: 1.5px solid ${({ color }) => color};
-    border-radius: 5px;
-    color: ${colors.white};
-    margin: 0.5em 0;
-    padding: 1em;
-    min-width: 30%;
-    flex-basis: 0;
-    @media(max-width: ${breakpoints.md}px) {
-        min-width: 100%;
-    }
+  :hover {
+    color: ${({ langColor }) => langColor};
+  }
 
-    a {
-      color: inherit;
-    }
+  border: 1.5px solid ${({ color }) => color};
+  border-radius: 5px;
+  margin: 0.5em 0;
+  padding: 1em;
+  min-width: 30%;
+  flex-basis: 0;
+  @media (max-width: ${breakpoints.md}px) {
+    min-width: 100%;
+  }
+
+  a {
+    color: inherit;
+  }
 `;
 
 const GithubRepoName = styled.span`
-    font-size: 1.2rem;
-    color: inherit;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-decoration: none;
-    text-overflow: scroll;
-    display: inline-block;
-    position: relative;
+  font-size: 1.2rem;
+  color: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  text-overflow: scroll;
+  display: inline-block;
+  position: relative;
 
-    :after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 0%;
-      content: ".";
-      color: transparent;
-      background: ${({ color }) => color};
-      height: 1px;
-    }
+  :after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0%;
+    content: ".";
+    color: transparent;
+    background: ${({ langColor }) => langColor};
+    height: 1px;
+  }
 
-    :hover {
-      color: ${({ color }) => color};
-      ::after {
-        width: 100%;
-      }
+  :hover {
+    color: ${({ langColor }) => langColor};
+    ::after {
+      width: 100%;
     }
+  }
 `;
 
 const GithubDescription = styled.div`
+    color: var(--textNormal);
     align-self: center;
     padding: 0 1.5rem;
-    color: ${colors.ui.light};
 `;
 
 const GithubLanguage = styled.div`
@@ -85,26 +84,23 @@ const GithubProjectViewer: React.FC<GithubProjectViewerProps> = ({ repo }) => {
   } = repo;
 
   return repo && repo.name ? (
-    <GithubViewerContainer color={primaryLanguage.color}>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <GithubRepoName color={primaryLanguage.color}>{name}</GithubRepoName>
+    <GithubViewerContainer langColor={primaryLanguage.color}>
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <GithubRepoName langColor={primaryLanguage.color}>
+          {name}
+        </GithubRepoName>
       </a>
       <GithubDescription>{description}</GithubDescription>
       {homepageUrl && (
-      <GithubPagesLink
-        color={primaryLanguage.color}
-        href={homepageUrl}
-      >
-        View on Github Pages
-      </GithubPagesLink>
+        <GithubPagesLink langColor={primaryLanguage.color} href={homepageUrl}>
+          View on Github Pages
+        </GithubPagesLink>
       )}
       <GithubLanguage>{primaryLanguage.name}</GithubLanguage>
     </GithubViewerContainer>
-  ) : (<></>);
+  ) : (
+    <></>
+  );
 };
 
 export default GithubProjectViewer;

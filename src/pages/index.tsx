@@ -5,7 +5,6 @@ import styled from '@emotion/styled';
 import Page from '../components/Page';
 import IndexLayout from '../layouts';
 import GithubProjectViewer from '../components/GithubViewer';
-import { colors } from '../styles/variables';
 import { GithubRepoInfo } from '../types.ts/index';
 
 const Container = styled.div`
@@ -66,7 +65,7 @@ const Command = styled.p`
 
 const SectionHeader = styled.h1`
   align-self: flex-start;
-  color: ${colors.brand};
+  color: var(--textTitle);
   margin: 1.5rem 0;
 `;
 
@@ -80,7 +79,7 @@ const GithubProjects = styled.div`
 
 const ContactSpan = styled.a`
   :hover {
-    color: cyan;
+    color: goldenrod;
   }
   color: #22da26;
   text-decoration: underline;
@@ -90,7 +89,7 @@ const ContactSection = styled.div`
   display: flex;
   flex-direction: column;
 
-  border: 1px solid ${colors.brand};
+  border: 1px solid var(--textNormal);
   border-radius: 5px;
   padding: 1em;
 `;
