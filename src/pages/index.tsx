@@ -22,7 +22,7 @@ const Window = styled.div`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  
+  max-width: 800px;
   &:before {
     content: ' ';
     display: block;
@@ -56,10 +56,9 @@ const Command = styled.p`
   white-space: wrap;
   overflow: wrap;
   animation: write-command 5s both;
-  
+  color: #22da26;
   &:before {
-    content: '$ ';
-    color: #22da26;
+    content: "$ ";
   }
 `;
 
@@ -118,17 +117,21 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
         <Window>
           <Terminal>
             <Command>
-              My name is Luke Shadler. I am a Full-Stack Software Engineer
-              based in San Diego, California.
+              My name is Luke Shadler. I am a Full-Stack Software Engineer based
+              in San Diego, California.
             </Command>
             <Command>
               Want more detailed experience data?&nbsp;
-              <ContactLink to="/resume">Click here to view my resume</ContactLink>
+              <ContactLink to="/resume">
+                Click here to view my resume
+              </ContactLink>
             </Command>
             {' '}
             <Command>
               Let&apos;s make something cool together!&nbsp;
-              <ContactSpan href="#contact">Click here to view contact information</ContactSpan>
+              <ContactSpan href="https://github.com/lshadler">
+                Let&apos;s connect on GitHub
+              </ContactSpan>
             </Command>
           </Terminal>
         </Window>
@@ -151,7 +154,13 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           </div>
           <div>
             Github:&nbsp;
-            <a href="https://github.com/lshadler" target="_blank" rel="noopener noreferrer">lshadler</a>
+            <a
+              href="https://github.com/lshadler"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              lshadler
+            </a>
           </div>
         </ContactSection>
       </Container>

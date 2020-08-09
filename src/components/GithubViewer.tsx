@@ -9,7 +9,8 @@ const GithubViewerContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   transition: all 200ms ease-in;
-  background-color: var(--bg);
+  background-color: var(--cardBg);
+  color: var(--textCard);
 
   :hover {
     color: ${({ langColor }) => langColor};
@@ -61,7 +62,7 @@ const GithubRepoName = styled.span`
 `;
 
 const GithubDescription = styled.div`
-    color: var(--textNormal);
+    color: var(--textCard);
     align-self: center;
     padding: 0 1.5rem;
 `;

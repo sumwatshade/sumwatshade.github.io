@@ -1,18 +1,33 @@
 import React from 'react';
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
+import styled from '@emotion/styled';
+
+interface ThemeToggleProps {
+  theme: string;
+  toggleTheme: (theme: string) => void;
+}
+
+const StyledButton = styled.button`
+  background-color: var(--textTitle);
+  color: var(--bg);
+  border: 1px solid var(--bg);
+  border-radius: 3px;
+`;
 
 export const ThemeToggle: React.FC = () => (
   <ThemeToggler>
-    {({ theme, toggleTheme }) => (
+    {({ theme, toggleTheme }: ThemeToggleProps) => (
       <label htmlFor="dark-mode-toggle">
-        <input
+        <StyledButton
           id="dark-mode-toggle"
-          type="checkbox"
-          onChange={(e) => toggleTheme(e.target.checked ? 'dark' : 'light')}
-          checked={theme === 'dark'}
-        />
-        {' '}
-        Dark mode
+          onClick={() => toggleTheme(theme && theme === 'light' ? 'dark' : 'light')}
+        >
+          Enable
+          {' '}
+          {theme === 'dark' ? 'light' : 'dark'}
+          {' '}
+          mode
+        </StyledButton>
       </label>
     )}
   </ThemeToggler>

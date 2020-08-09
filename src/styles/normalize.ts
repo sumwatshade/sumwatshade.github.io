@@ -24,6 +24,8 @@ export default `
     --textNormal: ${colors.black};
     --textTitle: ${colors.brand};
     --textLink: ${colors.brand};
+    --textCard: ${colors.white};
+    --cardBg: darkslategray;
     --textLinkHover: goldenrod;
     --hr: hsla(0, 0%, 0%, 0.2);
 
