@@ -6,6 +6,7 @@ import Page from '../components/Page';
 import IndexLayout from '../layouts';
 import { colors } from '../styles/variables';
 import { getEmSize } from '../styles/mixins';
+import SkillGraph from '../components/SkillGraph';
 
 const ResumeTitle = styled.h1`
   align-self: center;
@@ -40,25 +41,6 @@ const ResumeContainer = styled.div`
   justify-content: space-evenly;
 `;
 
-
-/**
- * Skills:
- *
- *  - math
- *  - Data Analysis and Visualization
- *  - Machine Learning
- *  - Economic Game Theory
- *  - Computational Astrophysics
- *
- * Languages
- *  - Python
- *  - Javascript
- *  - C99
- *  - Java
- *  - C++
- *  - Assembly (MIPS)
- *  - MySQL
- */
 
 const PersonalInfo = () => (
   <>
@@ -276,6 +258,10 @@ const Resume = () => (
         </Card>
         <Card>
           <PersonalInfo />
+        </Card>
+        <Card>
+          <CardTitle>Skills and Languages</CardTitle>
+          <SkillGraph />
         </Card>
       </ResumeContainer>
     </ResumePage>

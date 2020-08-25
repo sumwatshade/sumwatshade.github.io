@@ -150,6 +150,13 @@ export default `
     font-weight: bold;
   }
 
+  #graph-id-graph-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
   dd {
     margin-bottom: .5rem;
   }

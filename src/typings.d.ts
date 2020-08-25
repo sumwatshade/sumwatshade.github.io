@@ -15,3 +15,4 @@ declare module '*.module.css' {
 }
 
 declare module 'gatsby-plugin-dark-mode';
+declare module 'react-d3-graph';
