@@ -58,17 +58,36 @@ const QueryButton = styled.button`
   }
 `;
 
+const addOrReplaceUrlParam = (key: string, val: string) => {
+  let newLoc: string = '';
+  const uri = window.location.href;
+
+  const re = new RegExp(`([?&])${key}=.*?(&|$)`, 'i');
+  const separator = uri.indexOf('?') !== -1 ? '&' : '?';
+
+  if (uri.match(re)) {
+    newLoc = uri.replace(
+      re,
+      `$1${encodeURIComponent(key)}=${encodeURIComponent(val)}$2`,
+    );
+  } else {
+    newLoc = `${uri + separator + encodeURIComponent(key)}=${encodeURIComponent(
+      val,
+    )}`;
+  }
+
+  window.history.pushState({ path: newLoc }, '', newLoc);
+};
+
 const Browsers: React.FC = () => {
-  const [query, setQuery] = React.useState<string>('>= 1%');
+  const [query, setQuery] = React.useState<string>('');
   const [error, setError] = React.useState<string | undefined>();
   const [result, setResult] = React.useState<React.ReactNode[] | undefined>(undefined);
 
-
-  const handleClick = (clickEvent: React.MouseEvent) => {
-    clickEvent.preventDefault();
+  const queryBrowsers = (overrideQuery ?: string) => {
     try {
-      if (query) {
-        const browsers = browserslist(query);
+      if (overrideQuery || query) {
+        const browsers = browserslist(overrideQuery || query);
         setResult(browsers.map((v) => <li>{v}</li>));
         setError(undefined);
       }
@@ -78,9 +97,29 @@ const Browsers: React.FC = () => {
     }
   };
 
-  React.useEffect(() => {
+  const handleClick = (clickEvent: React.MouseEvent) => {
+    clickEvent.preventDefault();
+    addOrReplaceUrlParam('q', query);
+    queryBrowsers();
+  };
 
-  }, [query]);
+  React.useEffect(() => {
+    const queryString: string = window.location.search;
+
+    const params: { [key: string]: string } = queryString?.substr(1)?.split('&').reduce((acc, next) => {
+      const [key, val] = next.split('=');
+      return {
+        ...acc,
+        [key]: val,
+      };
+    }, {});
+
+    if (params && params.q) {
+      const decodedQuery = decodeURIComponent(params.q);
+      queryBrowsers(decodedQuery);
+      setQuery(decodedQuery);
+    }
+  }, []);
 
   return (
     <IndexLayout>
@@ -88,7 +127,13 @@ const Browsers: React.FC = () => {
         <Container>
           <h1>Browserslist Query</h1>
           <QueryForm>
-            <QueryInput placeholder={'ex. ">=1%, not dead"'} value={query} onChange={(e) => setQuery(e.target.value)} />
+            <QueryInput
+              placeholder={'ex. ">=1%, not dead"'}
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
+            />
             <QueryButton type="submit" onClick={handleClick}>Click here to query</QueryButton>
           </QueryForm>
           {result && (<Result><BrowserList>{result}</BrowserList></Result>)}
