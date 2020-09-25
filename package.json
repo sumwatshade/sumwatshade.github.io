@@ -80,7 +80,7 @@
     "eslint": "7.9.0",
     "eslint-config-airbnb": "18.1.0",
     "eslint-config-blvd": "1.0.2",
-    "eslint-config-prettier": "6.11.0",
+    "eslint-config-prettier": "6.12.0",
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-jest": "23.20.0",
     "eslint-plugin-jsx-a11y": "6.3.1",
