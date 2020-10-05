@@ -52,7 +52,7 @@
     "node-fetch": "2.6.1",
     "normalize.css": "8.0.1",
     "polished": "3.6.7",
-    "prism-themes": "1.4.0",
+    "prism-themes": "1.4.1",
     "prismjs": "1.21.0",
     "react": "16.13.1",
     "react-d3-graph": "2.5.0",
