@@ -7350,10 +7350,10 @@ eslint-config-airbnb@~18.2.1:
     object.assign "^4.1.2"
     object.entries "^1.1.2"
 
-eslint-config-blvd@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-blvd/-/eslint-config-blvd-1.1.0.tgz#5b43abb280e047692a7a9dd063158b611bd3d03a"
-  integrity sha512-uuctKdpE1bTDji42aQug2gCjAQKLz2tT3BUGoV38cTkgE8xK77mIHFJCLf4ghgQvLr09GumkxQvVwC9WS+RQ4g==
+eslint-config-blvd@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-blvd/-/eslint-config-blvd-1.1.1.tgz#4468852c278df0e5f6143d97c29aa7f6caac4e63"
+  integrity sha512-gbpBD/aLR52aNHtgbpwTN+V0Ds96NHLs8ToT6/N5YlFL1sULWhmJdnDIYWTxTChfdVDpg50PhBc9TasBWD59Ug==
   dependencies:
     "@typescript-eslint/eslint-plugin" "~4.9.0"
     "@typescript-eslint/parser" "~4.9.0"
