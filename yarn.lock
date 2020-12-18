@@ -14960,10 +14960,10 @@ react-clientside-effect@^1.2.2:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-react-d3-graph@2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/react-d3-graph/-/react-d3-graph-2.5.0.tgz#b5ce024472c660dcf1146336f424fab8df551431"
-  integrity sha512-/DSDbBXlmHLMb1P6Ac/d3Nf/2IE6Eh7PBuyOpW3uZMvJl+crViJ0NhAl6vVkGKSpPvRWuV7Pn4749Wry5i6HoA==
+react-d3-graph@2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/react-d3-graph/-/react-d3-graph-2.6.0.tgz#b994131e430b568e086970560ba8a26809113173"
+  integrity sha512-U72didZuPuYEqAi1n2bJvnph+9MviIw2x9I0eoxb1IKk3cyEwsJV96n3RL72z/7HDsa1FOvDKuOJE7ujSNZB/Q==
 
 react-dev-utils@^4.2.3:
   version "4.2.3"
