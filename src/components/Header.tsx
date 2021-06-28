@@ -48,6 +48,7 @@ const HomepageLink = styled(Link)`
   }
 `;
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Toggle = styled.div`
   display: none;
   height: 100%;
@@ -87,6 +88,7 @@ interface HamburgerDiv {
   open: boolean
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const Hamburger = styled.div<HamburgerDiv>`
   background-color: ${colors.white};
   align-self: flex-end;
@@ -124,14 +126,14 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [navbarOpen] = React.useState(false);
   return (
     <StyledHeader>
       <HeaderInner>
         <HomepageLink to="/">{title}</HomepageLink>
-        <Toggle onClick={() => setNavbarOpen(!navbarOpen)}>
+        {/* <Toggle onClick={() => setNavbarOpen(!navbarOpen)}>
           {navbarOpen ? <Hamburger open /> : <Hamburger open={false} />}
-        </Toggle>
+        </Toggle> */}
         {navbarOpen ? (
           <Navbox open={false}>
             <NavBarLinks />

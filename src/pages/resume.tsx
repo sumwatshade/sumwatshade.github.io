@@ -27,8 +27,8 @@ const Card = styled.section`
   min-width: 1000px;
 
   @media (max-width: 1200px) {
-      min-width: 95vw;
-      max-width: 95vw;
+      min-width: 90vw;
+      max-width: 90vw;
     }
 `;
 
@@ -99,14 +99,14 @@ const WorkExperience = () => (
     <CardTitle>Work Experience</CardTitle>
     <CardDetail>
       <CardItemHeader>Senior Software Engineer / Intuit (AppFabric)</CardItemHeader>
-      <CardItemSubheaderHeader>March 2020 -- Present</CardItemSubheaderHeader>
+      <CardItemSubheaderHeader>March 2020 - Present</CardItemSubheaderHeader>
       <CardItemList>
         <CardItemListItem>
-          Tech lead for tooling that builds Intuit&apos;s frontend ecosystem
+          Tech lead for tooling that builds Intuit&apos;s micro-frontend ecosystem
         </CardItemListItem>
         <CardItemListItem>
-          {/* eslint-disable-next-line max-len */}
-          Drove 40% reduction in CLI tool size, leading to corresponding drop in install times on all platforms
+          Drove 40% reduction in CLI tool size, leading to corresponding improvement in install
+          times on all platforms
         </CardItemListItem>
         <CardItemListItem>
           Built open-source update tool that allows multi-major CLI version management.
@@ -136,8 +136,8 @@ const WorkExperience = () => (
           solutions with great velocity
         </CardItemListItem>
         <CardItemListItem>
-          Uncompromising work ensuring that the product meets company standards and
-          creates customer delight
+          Rewrote build tooling for a 50% drop in client bundle size, along with efficient
+          code-splitting and client-side caching
         </CardItemListItem>
         <CardItemListItem>
           Relevant Technologies: Javascript, ReactJS, Java, Spring/Spring Boot,
