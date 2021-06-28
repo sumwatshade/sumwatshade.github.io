@@ -22,6 +22,11 @@ const CardItemHeader = styled.h3`
   color: goldenrod;
 `;
 
+const CardDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const CardItemSubheaderHeader = styled.h4`
   color: ${colors.ui.medium};
   margin: 0 0 20px 0;
@@ -37,8 +42,10 @@ const ResumePage = styled(Page)`
 const ResumeContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  width: 100vw;
 `;
 
 
@@ -57,48 +64,31 @@ const PersonalInfo = () => (
 const WorkExperience = () => (
   <>
     <CardTitle>Work Experience</CardTitle>
-    <div>
-      <CardItemHeader>Full Stack Software Developer / Solu Technology Partners</CardItemHeader>
-      <CardItemSubheaderHeader>July 2017 - January 2018</CardItemSubheaderHeader>
+    <CardDetail>
+      <CardItemHeader>Senior Software Engineer / Intuit AppFabric</CardItemHeader>
+      <CardItemSubheaderHeader>February 2018 - March 2020</CardItemSubheaderHeader>
       <CardItemList>
         <CardItemListItem>
-          Work as a member of a scrum team to provide state-of-the-art
-          Angular Material applications
+          Tech lead for tooling that builds Intuit&apos;s frontend ecosystem
         </CardItemListItem>
         <CardItemListItem>
-          Integrate a MySQL database architecture with front-end components
-          using the Spring Framework
+          Extensive work developing and managing CDNs and edge networks, powered by
+          Akamai and AWS
         </CardItemListItem>
         <CardItemListItem>
-          Participate in code reviews to maintain a fast-paced
-          consumer-focused agenda
+          Experience managing and tooling around a monorepo for our internal tooling.
+        </CardItemListItem>
+        <CardItemListItem>
+          Focus on developing technology that is open-source oriented
+        </CardItemListItem>
+        <CardItemListItem>
+          Relevant Technologies: AWS, ReactJS, Webpack, Go, Akamai, Oclif
         </CardItemListItem>
       </CardItemList>
-    </div>
-
-    <div>
-      <CardItemHeader>
-        Research and Development Engineer (Co-Op)/ WiTricity Corporation
-      </CardItemHeader>
-      <CardItemSubheaderHeader>
-        August 2015 - January 2015
-      </CardItemSubheaderHeader>
-      <CardItemList>
-        <CardItemListItem>
-          Developed auxiliary systems to aid in the safety of wireless power transfer
-        </CardItemListItem>
-        <CardItemListItem>
-          Prototyped embedded data acquisition systems from PCB design to fabrication
-        </CardItemListItem>
-        <CardItemListItem>
-          Firmware produced in C, visualized in Python with Qt Graphics toolkit
-        </CardItemListItem>
-      </CardItemList>
-    </div>
-
-    <div>
+    </CardDetail>
+    <CardDetail>
       <CardItemHeader>Software Engineer / Intuit</CardItemHeader>
-      <CardItemSubheaderHeader>February 2018 - Present</CardItemSubheaderHeader>
+      <CardItemSubheaderHeader>February 2018 - March 2020</CardItemSubheaderHeader>
       <CardItemList>
         <CardItemListItem>
           Develop industry-leading experiences for authentication/authorization within
@@ -117,14 +107,53 @@ const WorkExperience = () => (
           Webpack, Python, Atlassian (JIRA)
         </CardItemListItem>
       </CardItemList>
-    </div>
+    </CardDetail>
+
+    <CardDetail>
+      <CardItemHeader>Full Stack Software Developer / Solu Technology Partners</CardItemHeader>
+      <CardItemSubheaderHeader>July 2017 - January 2018</CardItemSubheaderHeader>
+      <CardItemList>
+        <CardItemListItem>
+          Work as a member of a scrum team to provide state-of-the-art
+          Angular Material applications
+        </CardItemListItem>
+        <CardItemListItem>
+          Integrate a MySQL database architecture with front-end components
+          using the Spring Framework
+        </CardItemListItem>
+        <CardItemListItem>
+          Participate in code reviews to maintain a fast-paced
+          consumer-focused agenda
+        </CardItemListItem>
+      </CardItemList>
+    </CardDetail>
+
+    <CardDetail>
+      <CardItemHeader>
+        Research and Development Engineer (Co-Op)/ WiTricity Corporation
+      </CardItemHeader>
+      <CardItemSubheaderHeader>
+        August 2015 - January 2015
+      </CardItemSubheaderHeader>
+      <CardItemList>
+        <CardItemListItem>
+          Developed auxiliary systems to aid in the safety of wireless power transfer
+        </CardItemListItem>
+        <CardItemListItem>
+          Prototyped embedded data acquisition systems from PCB design to fabrication
+        </CardItemListItem>
+        <CardItemListItem>
+          Firmware produced in C, visualized in Python with Qt Graphics toolkit
+        </CardItemListItem>
+      </CardItemList>
+    </CardDetail>
   </>
 );
 
 const AcademicExperience = () => (
   <>
     <CardTitle>Academic Experience</CardTitle>
-    <div>
+    <CardDetail>
       <CardItemHeader>
         Improving the Stochastic Template Bank Algorithm for aLIGO / Caltech
       </CardItemHeader>
@@ -139,8 +168,8 @@ const AcademicExperience = () => (
         </CardItemListItem>
         <CardItemListItem>Written in C utilizing the OpenMP framework</CardItemListItem>
       </CardItemList>
-    </div>
-    <div>
+    </CardDetail>
+    <CardDetail>
       <CardItemHeader>
         Optimization of MINERvA Proton Selection Algorithm / FermiLab, IL
       </CardItemHeader>
@@ -155,8 +184,8 @@ const AcademicExperience = () => (
         </CardItemListItem>
         <CardItemListItem>Extended to an REU at the University of Rochester</CardItemListItem>
       </CardItemList>
-    </div>
-    <div>
+    </CardDetail>
+    <CardDetail>
       <CardItemHeader>Feeding and Feedback of Active Galactic Nuclei</CardItemHeader>
       <CardItemSubheaderHeader>2013 - 2015</CardItemSubheaderHeader>
       <CardItemList>
@@ -172,8 +201,8 @@ const AcademicExperience = () => (
           Sol in Porto Allegre, Brazil
         </CardItemListItem>
       </CardItemList>
-    </div>
-    <div>
+    </CardDetail>
+    <CardDetail>
       <CardItemHeader>Research Assistant @ Laboratory for Laser Energetics</CardItemHeader>
       <CardItemSubheaderHeader>2013 - 2015</CardItemSubheaderHeader>
 
@@ -192,14 +221,14 @@ const AcademicExperience = () => (
         </CardItemListItem>
       </CardItemList>
 
-    </div>
+    </CardDetail>
   </>
 );
 
 const Education = () => (
   <>
     <CardTitle>Education</CardTitle>
-    <div>
+    <CardDetail>
       <CardItemHeader>Physics, B.S. - Rochester Institute of Technology</CardItemHeader>
       <CardItemSubheaderHeader>2013-2017</CardItemSubheaderHeader>
       <CardItemList>
@@ -227,7 +256,7 @@ const Education = () => (
           Electronic Measurements, Circuits (AC/DC), Electronics I
         </CardItemListItem>
       </CardItemList>
-    </div>
+    </CardDetail>
   </>
 );
 
@@ -240,6 +269,8 @@ const Card = styled.section`
   margin: 1em;
   display: flex;
   flex-direction: column;
+  max-width: 95vw;
+  min-width: 20vw;
 `;
 
 const Resume = () => (

@@ -1,13 +1,13 @@
 
 module.exports = {
   siteMetadata: {
-    title: 'lshadler.github.io',
+    title: 'lshadler',
     description: 'A personal website for Lucas Shadler',
     keywords: 'gatsbyjs, gatsby, typescript, resume, portfolio',
-    siteUrl: 'https://lshadler.github.io/',
+    siteUrl: 'https://sumwatshade.github.io/lshadler.github.io/',
     author: {
       name: 'Lucas Shadler',
-      url: 'https://github.intuit.com/lshadler',
+      url: 'https://github.intuit.com/sumwatshade',
       email: 'lshadler13@gmail.com',
     },
   },
