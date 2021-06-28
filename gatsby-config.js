@@ -4,7 +4,7 @@ module.exports = {
     title: 'lshadler',
     description: 'A personal website for Lucas Shadler',
     keywords: 'gatsbyjs, gatsby, typescript, resume, portfolio',
-    siteUrl: 'https://sumwatshade.github.io/lshadler.github.io/',
+    siteUrl: 'https://sumwatshade.github.io',
     author: {
       name: 'Lucas Shadler',
       url: 'https://github.intuit.com/sumwatshade',
