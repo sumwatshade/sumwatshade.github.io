@@ -110,7 +110,8 @@ const Navbox = styled.div<NavBoxDiv>`
 //   }
 
 //   ::before {
-//     transform: ${(props) => (props.open ? 'rotate(-90deg) translate(-10px, 0px)' : 'rotate(0deg)')};
+//     transform:
+// ${(props) => (props.open ? 'rotate(-90deg) translate(-10px, 0px)' : 'rotate(0deg)')};
 //     top: -10px;
 //   }
 
