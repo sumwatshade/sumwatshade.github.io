@@ -99,17 +99,21 @@ const WorkExperience = () => (
     <CardTitle>Work Experience</CardTitle>
     <CardDetail>
       <CardItemHeader>Senior Software Engineer / Intuit (AppFabric)</CardItemHeader>
-      <CardItemSubheaderHeader>January 2021 -- Present</CardItemSubheaderHeader>
+      <CardItemSubheaderHeader>March 2020 -- Present</CardItemSubheaderHeader>
       <CardItemList>
         <CardItemListItem>
           Tech lead for tooling that builds Intuit&apos;s frontend ecosystem
         </CardItemListItem>
         <CardItemListItem>
-          Extensive work developing and managing CDNs and edge networks, powered by
-          Akamai and AWS
+          {/* eslint-disable-next-line max-len */}
+          Drove 40% reduction in CLI tool size, leading to corresponding drop in install times on all platforms
         </CardItemListItem>
         <CardItemListItem>
-          Experience managing and tooling around a monorepo for our internal tooling.
+          Built open-source update tool that allows multi-major CLI version management.
+        </CardItemListItem>
+        <CardItemListItem>
+          Extensive work developing and managing CDNs and edge networks, powered by
+          Akamai and AWS
         </CardItemListItem>
         <CardItemListItem>
           Focus on developing technology that is open-source oriented
@@ -121,7 +125,7 @@ const WorkExperience = () => (
     </CardDetail>
     <CardDetail>
       <CardItemHeader>Software Engineer / Intuit (Identity)</CardItemHeader>
-      <CardItemSubheaderHeader>February 2018 - December 2020</CardItemSubheaderHeader>
+      <CardItemSubheaderHeader>February 2018 - March 2020</CardItemSubheaderHeader>
       <CardItemList>
         <CardItemListItem>
           Develop industry-leading experiences for authentication/authorization within
