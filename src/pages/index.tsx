@@ -185,10 +185,10 @@ fragment repoInfo on GitHub_Repository{
 query IndexQuery {
   github {
     user(login: "sumwatshade") {
-      site: repository(name: "lshadler.github.io") {
+      site: repository(name: "sumwatshade.github.io") {
         ...repoInfo
       }
-      covid: repository(name: "covid-19") {
+      covid: repository(name: "plugin-update") {
         ...repoInfo
       }
       webpackDemo: repository(name: "webpack-demo") {
