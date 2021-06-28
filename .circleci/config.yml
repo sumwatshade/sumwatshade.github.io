@@ -108,22 +108,16 @@ workflows:
               ignore:
                 - master
       - type-check:
-          requires:
-            - build
           filters:
             branches:
               ignore:
                 - master
       - test:
-          requires:
-            - build
           filters:
             branches:
               ignore:
                 - master
       - lint:
-          requires:
-            - build
           filters:
             branches:
               ignore:
