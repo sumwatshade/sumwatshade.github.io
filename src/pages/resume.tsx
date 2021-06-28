@@ -2,15 +2,34 @@
 import * as React from 'react';
 
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 import Page from '../components/Page';
 import IndexLayout from '../layouts';
-import { colors } from '../styles/variables';
+import { colors, breakpoints } from '../styles/variables';
 import { getEmSize } from '../styles/mixins';
-import SkillGraph from '../components/SkillGraph';
+// import SkillGraph from '../components/SkillGraph';
+
 
 const ResumeTitle = styled.h1`
   align-self: center;
   margin: 30px;
+`;
+
+const Card = styled.section`
+  background-color: var(--bg);
+  border: ${getEmSize(1)}em solid var(--textTitle);
+  border-radius: 5px;
+  padding: 2em;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  min-width: 1000px;
+
+  @media (max-width: 1200px) {
+      min-width: 95vw;
+      max-width: 95vw;
+    }
 `;
 
 const CardTitle = styled.h2`
@@ -48,11 +67,25 @@ const ResumeContainer = styled.div`
   width: 100vw;
 `;
 
+const ResumeDownloadButton = styled(Link)`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    align-self: center;
+    width: 300px;
+    @media (max-width: ${breakpoints.md}px) {
+      flex-direction: column-reverse;
+    }
+`;
+
 
 const PersonalInfo = () => (
   <>
     <CardTitle>Contact Info</CardTitle>
-    {/* TODO: Implement PDF resume here */}
     <CardItemList>
       <CardItemListItem>San Diego, CA</CardItemListItem>
       <CardItemListItem>lshadler13@gmail.com</CardItemListItem>
@@ -65,8 +98,8 @@ const WorkExperience = () => (
   <>
     <CardTitle>Work Experience</CardTitle>
     <CardDetail>
-      <CardItemHeader>Senior Software Engineer / Intuit AppFabric</CardItemHeader>
-      <CardItemSubheaderHeader>February 2018 - March 2020</CardItemSubheaderHeader>
+      <CardItemHeader>Senior Software Engineer / Intuit (AppFabric)</CardItemHeader>
+      <CardItemSubheaderHeader>January 2021 -- Present</CardItemSubheaderHeader>
       <CardItemList>
         <CardItemListItem>
           Tech lead for tooling that builds Intuit&apos;s frontend ecosystem
@@ -87,8 +120,8 @@ const WorkExperience = () => (
       </CardItemList>
     </CardDetail>
     <CardDetail>
-      <CardItemHeader>Software Engineer / Intuit</CardItemHeader>
-      <CardItemSubheaderHeader>February 2018 - March 2020</CardItemSubheaderHeader>
+      <CardItemHeader>Software Engineer / Intuit (Identity)</CardItemHeader>
+      <CardItemSubheaderHeader>February 2018 - December 2020</CardItemSubheaderHeader>
       <CardItemList>
         <CardItemListItem>
           Develop industry-leading experiences for authentication/authorization within
@@ -260,24 +293,44 @@ const Education = () => (
   </>
 );
 
+const Skills = () => (
+  <>
+    <CardTitle>Skills and Technology</CardTitle>
+    <CardDetail>
 
-const Card = styled.section`
-  background-color: var(--bg);
-  border: ${getEmSize(1)}em solid var(--textTitle);
-  border-radius: 5px;
-  padding: 2em;
-  margin: 1em;
-  display: flex;
-  flex-direction: column;
-  max-width: 95vw;
-  min-width: 20vw;
-`;
+      <CardItemHeader>Languages</CardItemHeader>
+      <CardItemList>
+        <CardItemListItem>Javascript/Typescript</CardItemListItem>
+        <CardItemListItem>HTML</CardItemListItem>
+        <CardItemListItem>CSS</CardItemListItem>
+        <CardItemListItem>Python</CardItemListItem>
+        <CardItemListItem>Go</CardItemListItem>
+      </CardItemList>
+      <CardItemHeader>Frameworks</CardItemHeader>
+      <CardItemList>
+        <CardItemListItem>ReactJS</CardItemListItem>
+        <CardItemListItem>AngularJS</CardItemListItem>
+        <CardItemListItem>Spring Boot</CardItemListItem>
+        <CardItemListItem>OClif (CLI Framework)</CardItemListItem>
+      </CardItemList>
+      <CardItemHeader>Skills</CardItemHeader>
+      <CardItemList>
+        <CardItemListItem>AWS Solutions Architect</CardItemListItem>
+        <CardItemListItem>Akamai</CardItemListItem>
+        <CardItemListItem>Kubernetes</CardItemListItem>
+        <CardItemListItem>Jenkins/Groovy</CardItemListItem>
+        <CardItemListItem>Data Analysis and Visualization</CardItemListItem>
+      </CardItemList>
+    </CardDetail>
+  </>
+);
 
 const Resume = () => (
   <IndexLayout>
     <ResumePage>
       <ResumeContainer>
-        <ResumeTitle>Lucas Shadler - Resume</ResumeTitle>
+        <ResumeTitle>Resume</ResumeTitle>
+        <ResumeDownloadButton to="https://github.com/sumwatshade/resume/raw/master/short/resume.pdf">Download resume PDF here</ResumeDownloadButton>
         <Card>
           <WorkExperience />
         </Card>
@@ -291,8 +344,7 @@ const Resume = () => (
           <PersonalInfo />
         </Card>
         <Card>
-          <CardTitle>Skills and Languages</CardTitle>
-          <SkillGraph />
+          <Skills />
         </Card>
       </ResumeContainer>
     </ResumePage>
