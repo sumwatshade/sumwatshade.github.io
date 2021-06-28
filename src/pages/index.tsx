@@ -129,7 +129,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             {' '}
             <Command>
               Let&apos;s make something cool together!&nbsp;
-              <ContactSpan href="https://github.com/lshadler">
+              <ContactSpan href="https://github.com/sumwatshade">
                 Let&apos;s connect on GitHub
               </ContactSpan>
             </Command>
@@ -155,11 +155,11 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           <div>
             Github:&nbsp;
             <a
-              href="https://github.com/lshadler"
+              href="https://github.com/sumwatshade"
               target="_blank"
               rel="noopener noreferrer"
             >
-              lshadler
+              sumwatshade
             </a>
           </div>
         </ContactSection>
