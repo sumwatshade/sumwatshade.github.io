@@ -15,13 +15,6 @@ exports[`Header renders correctly 1`] = `
         test title
       </a>
       <div
-        class="css-99wob1"
-      >
-        <div
-          class="css-1gxg4gp"
-        />
-      </div>
-      <div
         class="css-1x65t9n"
         open=""
       >

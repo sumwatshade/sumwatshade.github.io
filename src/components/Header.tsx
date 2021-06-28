@@ -49,16 +49,16 @@ const HomepageLink = styled(Link)`
 `;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Toggle = styled.div`
-  display: none;
-  height: 100%;
-  cursor: pointer;
-  align-self: flex-end;
+// const Toggle = styled.div`
+//   display: none;
+//   height: 100%;
+//   cursor: pointer;
+//   align-self: flex-end;
 
-  @media (max-width: 768px) {
-    display: flex;
-  }
-`;
+//   @media (max-width: 768px) {
+//     display: flex;
+//   }
+// `;
 
 interface NavBoxDiv {
   open: boolean
@@ -84,42 +84,42 @@ const Navbox = styled.div<NavBoxDiv>`
   }
 `;
 
-interface HamburgerDiv {
-  open: boolean
-}
+// interface HamburgerDiv {
+//   open: boolean
+// }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Hamburger = styled.div<HamburgerDiv>`
-  background-color: ${colors.white};
-  align-self: flex-end;
-  width: 30px;
-  height: 3px;
-  transition: all .3s linear;
-  align-self: center;
-  position: relative;
-  transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'inherit')};
+// const Hamburger = styled.div<HamburgerDiv>`
+//   background-color: ${colors.white};
+//   align-self: flex-end;
+//   width: 30px;
+//   height: 3px;
+//   transition: all .3s linear;
+//   align-self: center;
+//   position: relative;
+//   transform: ${(props) => (props.open ? 'rotate(-45deg)' : 'inherit')};
 
-  ::before,
-  ::after {
-    width: 30px;
-    height: 3px;
-    background-color: ${colors.white};
-    content: "";
-    position: absolute;
-    transition: all 0.3s linear;
-  }
+//   ::before,
+//   ::after {
+//     width: 30px;
+//     height: 3px;
+//     background-color: ${colors.white};
+//     content: "";
+//     position: absolute;
+//     transition: all 0.3s linear;
+//   }
 
-  ::before {
-    transform: ${(props) => (props.open ? 'rotate(-90deg) translate(-10px, 0px)' : 'rotate(0deg)')};
-    top: -10px;
-  }
+//   ::before {
+//     transform: ${(props) => (props.open ? 'rotate(-90deg) translate(-10px, 0px)' : 'rotate(0deg)')};
+//     top: -10px;
+//   }
 
-  ::after {
-    opacity: ${(props) => (props.open ? '0' : '1')};
-    transform: ${(props) => (props.open ? 'rotate(90deg) ' : 'rotate(0deg)')};
-    top: 10px;
-  }
-`;
+//   ::after {
+//     opacity: ${(props) => (props.open ? '0' : '1')};
+//     transform: ${(props) => (props.open ? 'rotate(90deg) ' : 'rotate(0deg)')};
+//     top: 10px;
+//   }
+// `;
 
 interface HeaderProps {
   title: string
