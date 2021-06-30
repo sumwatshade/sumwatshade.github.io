@@ -86,7 +86,8 @@ const GithubProjectViewer: React.FC<GithubProjectViewerProps> = ({ repo }) => {
 
   return repo && repo.name ? (
     <GithubViewerContainer color={primaryLanguage.color}>
-      <a href={url} target="_blank" rel="noopener noreferrer">
+      {/* Temporary rewrite */}
+      <a href={url.replace('lshadler', 'sumwatshade')} target="_blank" rel="noopener noreferrer">
         <GithubRepoName color={primaryLanguage.color}>
           {name}
         </GithubRepoName>
