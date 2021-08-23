@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:dubnium
+      - image: circleci/node:fermium
     working_directory: ~/gatsby-site
     steps:
       - checkout
@@ -23,7 +23,7 @@ jobs:
           command: yarn build
   lint:
     docker:
-      - image: circleci/node:dubnium
+      - image: circleci/node:fermium
     working_directory: ~/gatsby-site
     steps:
       - checkout
@@ -43,7 +43,7 @@ jobs:
           command: yarn lint
   type-check:
     docker:
-      - image: circleci/node:dubnium
+      - image: circleci/node:fermium
     working_directory: ~/gatsby-site
     steps:
       - checkout
@@ -63,7 +63,7 @@ jobs:
           command: yarn type-check
   test:
     docker:
-      - image: circleci/node:dubnium
+      - image: circleci/node:fermium
     working_directory: ~/gatsby-site
     steps:
       - checkout
@@ -83,7 +83,7 @@ jobs:
           command: yarn test      
   deploy:
     docker:
-      - image: circleci/node:dubnium
+      - image: circleci/node:fermium
     working_directory: ~/gatsby-site
     steps:
       - checkout
