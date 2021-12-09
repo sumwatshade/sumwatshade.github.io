@@ -142,7 +142,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           <GithubProjectViewer repo={data.github.user.roost} />
           <GithubProjectViewer repo={data.github.user.forwardMomentum} />
           <GithubProjectViewer repo={data.github.user.covid} />
-          <GithubProjectViewer repo={data.github.user.indecisionPlaza} />
+          <GithubProjectViewer repo={data.github.user.bazelModuleFederation} />
         </GithubProjects>
         <SectionHeader id="contact">Contact</SectionHeader>
         <ContactSection>
@@ -200,7 +200,7 @@ query IndexQuery {
       forwardMomentum: repository(name: "forward-momentum") {
         ...repoInfo
       }
-      indecisionPlaza: repository(name: "indecision-plaza") {
+      bazelModuleFederation: repository(name: "bazel-module-federation") {
         ...repoInfo
       }
     }
