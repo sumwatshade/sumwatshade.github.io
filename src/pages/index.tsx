@@ -104,7 +104,7 @@ interface IndexProps {
         webpackDemo: GithubRepoInfo,
         roost: GithubRepoInfo,
         forwardMomentum: GithubRepoInfo,
-        indecisionPlaza: GithubRepoInfo,
+        bazelModuleFederation: GithubRepoInfo,
       }
     }
   }
