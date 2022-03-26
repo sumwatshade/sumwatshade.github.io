@@ -17,7 +17,9 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,md}\"",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "test": "jest",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -61,7 +63,8 @@
     "react-typography": "0.16.19",
     "typescript": "3.9.9",
     "typography": "0.16.19",
-    "typography-theme-grand-view": "0.16.19"
+    "typography-theme-grand-view": "0.16.19",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@testing-library/react": "10.4.9",
@@ -95,5 +98,6 @@
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
     "ts-jest": "26.5.4"
-  }
+  },
+  "snyk": true
 }
